@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <article class="prose lg:prose-xl">
+        <article class="prose lg:prose-2xl">
         <h1>
           Welcome to LocalWuru
         </h1>
