@@ -12,7 +12,7 @@ export default function Home() {
       <main>
         <article class="prose lg:prose-2xl">
         <h1>
-          Welcome to LocalWuru
+          Welcome to LocalWuru /Development
         </h1>
   <p>
     For years parents have espoused the health benefits of eating garlic bread with cheese to their
