@@ -1,6 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/sass/style.scss'
 
+import React, {useState} from 'react'
+
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -9,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar/>
       <main>
         <article class="prose lg:prose-2xl">
         <h1>
@@ -35,6 +41,7 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer> */}
+      <Footer/>
     </div>
   )
 }
