@@ -2,7 +2,7 @@ import React from 'react'
 
 function CardCities ({faq,index,toggleFAQ}){
   return (
-      <div className="col-span-2 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+      <div className="col-span-1 md:col-span-2 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
       style={{
         backgroundImage: "url(" + "/images/cdmx.jpg" + ")",
         backgroundPosition: 'center',

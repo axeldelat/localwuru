@@ -27,8 +27,8 @@ export default function Home() {
 
       <Navbar/>
       <main>
-        <section className="container mx-auto grid grid-cols-8 gap-4 p-32 ">
-          <div className="col-span-8"><h1 className="text-center text-5xl mb-5">Ciudades Recientes</h1></div>
+        <section className="container mx-auto grid grid-cols-1 md:grid-cols-8 gap-4 p-10 md:p-32 ">
+          <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Ciudades Recientes</h1></div>
           <div></div>
           <CardCities />
           <CardCities />
