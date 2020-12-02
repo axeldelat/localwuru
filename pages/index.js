@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
+import CardCities from '../components/CardCities'
 
 // Load Source Sans Pro typeface
 // require('typeface-source-sans-pro')
@@ -26,21 +27,15 @@ export default function Home() {
 
       <Navbar/>
       <main>
-        <article class="prose lg:prose-2xl">
-          <h1>
-            Welcome to LocalWuru /Development
-          </h1>
-          <p>
-            For years parents have espoused the health benefits of eating garlic bread with cheese to their
-            children, with the food earning such an iconic status in our culture that kids will often dress
-            up as warm, cheesy loaf for Halloween.
-          </p>
-          <p>
-            But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-            springing up around the country.
-          </p>
-        </article>
-        <section className="container mx-auto">
+        <section className="container mx-auto grid grid-cols-8 gap-4 p-32 ">
+          <div className="col-span-8"><h1 className="text-center text-5xl mb-5">Ciudades Recientes</h1></div>
+          <div></div>
+          <CardCities />
+          <CardCities />
+          <CardCities />
+          <div></div>
+        </section>
+        <section className="w-screen shadow-2xl">
         <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-10 flex flex-col justify-center">
             <img className="object-contain w-full" src="/images/graphiclw.png"/>
@@ -63,17 +58,17 @@ export default function Home() {
         </section>
 
         <section
-        className="min-h-screen p-10 flex flex-wrap content-end"
+        className="md:min-h-screen p-10 md:p-50 flex flex-wrap content-end"
         style={{
           backgroundImage: "url(" + "/images/experience-alex.jpg" + ")",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
         }}>
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="pt-20  grid sm:grid-cols-1 md:grid-cols-3 gap-4">
           <div >
-            <p className="text-white">"Mi experiencia como chef te revelará aspectos únicos de la cultura gastronómica de mi ciudad"</p>
-            <p className="text-white font-bold">Alexander F.</p>
+            <p className="text-white font-light italic md:text-3xl">"Mi experiencia como chef te revelará aspectos únicos de la cultura gastronómica de mi ciudad"</p>
+            <p className="text-white font-bold md:text-2xl">Alexander F.</p>
             <p className="text-white font-bold">Chef & Traveler</p>
             <p className="text-white font-bold">San Francisco</p>
           </div>
