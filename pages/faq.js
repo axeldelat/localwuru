@@ -39,7 +39,7 @@ export default function Faq() {
           </div>
         </div>
         </section>
-        <section className="mx-auto text-center h-auto p-20 flex flex-col bg-gradient-to-b from-red-100 from-purple-100">
+        <section className="mx-auto text-center h-auto p-10 md:p-20 flex flex-col bg-gradient-to-b from-red-100 from-purple-100">
           <h1 className="text-5xl font-bold mb-10">
             Preguntas Frecuentes
           </h1>

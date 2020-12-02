@@ -33,9 +33,9 @@ function Accordion(){
         }
 
         return (
-            <div className="faqs grid grid-cols-6 gap-4">
+            <div className="faqs grid  grid-cols-1 md:grid-cols-6 gap-4">
               {faqs.map((faq,i)=>(
-                  <div className="col-start-2 col-span-4">
+                  <div className="col-span-1 md:col-start-2 md:col-span-4">
                   <FAQ faq={faq} index={i}toggleFAQ={toggleFAQ}/>
                   </div>
               ))}
