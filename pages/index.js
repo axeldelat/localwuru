@@ -2,11 +2,11 @@ import Head from 'next/head'
 import styles from '../styles/sass/style.scss'
 
 import React, {useState} from 'react'
-
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Link from 'next/link'
 
 //Components
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
 
 // Load Source Sans Pro typeface
@@ -52,9 +52,11 @@ export default function Home() {
               <p className="text-justify">Haciendo experiencias locales únicas solo posibles con la experiencia de un gurú local.</p>
             </div>
             <div>
-              <button class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded">
+            <Link href="/faq">
+              <button class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded" >
                 Saber Más
               </button>
+            </Link>
             </div>
           </div>
         </div>
@@ -79,7 +81,9 @@ export default function Home() {
           <div></div>
         </div>
         </section>
-        <CallToAction />
+        <section className="h-auto p-20 flex flex-col space-y-10 bg-gradient-to-b from-red-100 from-purple-100">
+          <CallToAction />
+        </section>
       </main>
       {/* <footer className={styles.footer}>
         <a
