@@ -2,12 +2,13 @@ import Head from 'next/head'
 import styles from '../styles/sass/style.scss'
 
 import React, {useState} from 'react'
-
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Link from 'next/link'
 
 //Components
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
+import CardCities from '../components/CardCities'
 
 // Load Source Sans Pro typeface
 // require('typeface-source-sans-pro')
@@ -26,14 +27,23 @@ export default function Home() {
 
       <Navbar/>
       <main>
-        <section className="hero relative">
+      <section className="hero relative">
           <h1 id="title" className="text-white text-center text-5xl absolute font-extralight"><span className="block">Experiencias increíbles,</span><span className="block">contadas por personas únicas</span></h1>
-          <div id="searchContainer" className="flex absolute">
-            <input className="searchBar w-96 h-10 rounded-sm" placeholder="Busca por ciudad"></input>
-            <img src="/images/Search.svg" className="relative right-7 cursor-pointer"></img>
-          </div>
+        <div id="searchContainer" className="flex absolute">
+        <input className="searchBar w-96 h-10 rounded-sm" placeholder="Busca por ciudad"></input>
+          <img src="/images/Search.svg" className="relative right-7 cursor-pointer"></img>
+        </div>
+      </section>
+
+        <section className="container mx-auto grid grid-cols-1 md:grid-cols-8 gap-4 p-10 md:p-32 ">
+          <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Ciudades Recientes</h1></div>
+          <div></div>
+          <CardCities />
+          <CardCities />
+          <CardCities />
+          <div></div>
         </section>
-        <section className="container mx-auto">
+        <section className="w-screen shadow-2xl">
         <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-10 flex flex-col justify-center">
             <img className="object-contain w-full" src="/images/graphiclw.png"/>
@@ -45,26 +55,28 @@ export default function Home() {
               <p className="text-justify">Haciendo experiencias locales únicas solo posibles con la experiencia de un gurú local.</p>
             </div>
             <div>
-              <button class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded">
+            <Link href="/faq">
+              <button class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded" >
                 Saber Más
               </button>
+            </Link>
             </div>
           </div>
         </div>
         </section>
 
         <section
-        className="min-h-screen p-10 flex flex-wrap content-end"
+        className="md:min-h-screen p-10 md:p-50 flex flex-wrap content-end"
         style={{
           backgroundImage: "url(" + "/images/experience-alex.jpg" + ")",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
         }}>
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="pt-20  grid sm:grid-cols-1 md:grid-cols-3 gap-4">
           <div >
-            <p className="text-white">"Mi experiencia como chef te revelará aspectos únicos de la cultura gastronómica de mi ciudad"</p>
-            <p className="text-white font-bold">Alexander F.</p>
+            <p className="text-white font-light italic md:text-3xl">"Mi experiencia como chef te revelará aspectos únicos de la cultura gastronómica de mi ciudad"</p>
+            <p className="text-white font-bold md:text-2xl">Alexander F.</p>
             <p className="text-white font-bold">Chef & Traveler</p>
             <p className="text-white font-bold">San Francisco</p>
           </div>
@@ -72,18 +84,10 @@ export default function Home() {
           <div></div>
         </div>
         </section>
-        <CallToAction />
+        <section className="h-auto p-20 flex flex-col space-y-10 bg-gradient-to-b from-red-100 from-purple-100">
+          <CallToAction />
+        </section>
       </main>
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer> */}
       <Footer/>
     </div>
   )
