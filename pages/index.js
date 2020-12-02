@@ -26,20 +26,13 @@ export default function Home() {
 
       <Navbar/>
       <main>
-        <article class="prose lg:prose-2xl">
-          <h1>
-            Welcome to LocalWuru /Development
-          </h1>
-          <p>
-            For years parents have espoused the health benefits of eating garlic bread with cheese to their
-            children, with the food earning such an iconic status in our culture that kids will often dress
-            up as warm, cheesy loaf for Halloween.
-          </p>
-          <p>
-            But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-            springing up around the country.
-          </p>
-        </article>
+        <section className="hero relative">
+          <h1 id="title" className="text-white text-center text-5xl absolute font-extralight"><span className="block">Experiencias increíbles,</span><span className="block">contadas por personas únicas</span></h1>
+          <div id="searchContainer" className="flex absolute">
+            <input className="searchBar w-96 h-10 rounded-sm" placeholder="Busca por ciudad"></input>
+            <img src="/images/Search.svg" className="relative right-7 cursor-pointer"></img>
+          </div>
+        </section>
         <section className="container mx-auto">
         <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-10 flex flex-col justify-center">
