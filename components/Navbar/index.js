@@ -19,7 +19,7 @@ class Navbar extends Component{
                   <ul class="flex mr-5">
                     <li class="mt-5 text-gray-700 mr-4"><a href="#">Descubre</a></li>
                     <li class="mt-5 text-gray-700 mr-4">
-                      <Link href="/" as="/login">
+                      <Link href="/login" as="/login">
                         <a>Iniciar Sesión</a>
                       </Link>
                     </li>
