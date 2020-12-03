@@ -27,6 +27,14 @@ export default function Home() {
 
       <Navbar/>
       <main>
+      <section className="hero relative">
+          <h1 id="title" className="text-white text-center text-5xl absolute font-extralight"><span className="block">Experiencias increíbles,</span><span className="block">contadas por personas únicas</span></h1>
+        <div id="searchContainer" className="flex absolute">
+        <input className="searchBar w-96 h-10 rounded-sm" placeholder="Busca por ciudad"></input>
+          <img src="/images/Search.svg" className="relative right-7 cursor-pointer"></img>
+        </div>
+      </section>
+
         <section className="container mx-auto grid grid-cols-1 md:grid-cols-8 gap-4 p-10 md:p-32 ">
           <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Ciudades Recientes</h1></div>
           <div></div>
@@ -48,7 +56,7 @@ export default function Home() {
             </div>
             <div>
             <Link href="/faq">
-              <button class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded" >
+              <button class="px-4 py-2 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" >
                 Saber Más
               </button>
             </Link>
@@ -80,16 +88,6 @@ export default function Home() {
           <CallToAction />
         </section>
       </main>
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer> */}
       <Footer/>
     </div>
   )
