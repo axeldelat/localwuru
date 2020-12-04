@@ -1,26 +1,12 @@
-import Head from 'next/head'
-import styles from '../styles/sass/style.scss'
 
-//Components
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import React, { Component } from 'react'
+import Link from 'next/link'
 
-export default function NewUser()  {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Registro de Usuario- LocalWuru</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+class DashBoard extends Component{
 
-      <Navbar/>
-      <main className="w-screen mx-auto bg-gradient-to-b from-red-100 from-purple-100 grid grid-cols-1 md:grid-cols-6 gap-4">
-        <section className="text-left h-auto p-10 md:p-20 flex flex-col  col-span-1 md:col-span-4 md:col-start-2">
-          <div className="bg-white p-5 rounded-lg text-black  my-3 shadow rounded-sm m-3">
-            <h1 className="text-5xl font-light mb-10">
-              Registro de Usuario
-            </h1>
-            <form className="h-full overflow-auto  w-full h-full flex flex-col">
+  render() {
+    return (
+            <form>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 text-sm font-normal mb-2"
@@ -189,10 +175,8 @@ export default function NewUser()  {
               <button class="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">Enviar</button>
               </div>
             </form>
-          </div>
-        </section>
-      </main>
-      <Footer/>
-    </div>
-  )
+        );
+    }
 }
+
+export default DashBoard
