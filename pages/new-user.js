@@ -88,6 +88,22 @@ export default function NewUser()  {
               <div className="mb-4">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
+                    for="linkpaypalme"
+                  >
+                    Link Paypal.Me
+                  </label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="linkpaypalme"
+                    type="text"
+                    required
+                    autofocus
+                    placeholder="Ej: paypal.me/joe"
+                  />
+              </div>
+              <div className="mb-4">
+                <label
+                    className="block text-gray-700 text-sm font-normal mb-2"
                     for="paypal"
                   >
                     Aceptar Donaciones Paypal
