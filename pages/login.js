@@ -15,7 +15,7 @@ export default function Login() {
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
       </Head>
       <Navbar/>
-      <main className="h-auto md:h-screen p-10 flex justify-center">
+      <main className="w-screen mx-auto bg-gradient-to-b from-red-100 from-purple-100 h-auto md:h-screen p-10 flex justify-center">
         <div className="flex items-center justify-center">
             <div className="w-full max-w-md">
               <form className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
