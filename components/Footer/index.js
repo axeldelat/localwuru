@@ -4,7 +4,7 @@ class Footer extends Component{
     render() {
         return (
             <div>
-              <ul id="footer" className="flex justify-between shadow-sm text-xs">
+              <ul id="footer" className="flex justify-between shadow-sm text-sm">
                 <li className="flex mt-2">
                     <a href="#" className="mt-1 ml-5"><img src="/images/Group6.svg"/></a>
                     <div className="mt-2 ml-2 text-gray-700">Local Wuru Copyright</div>
