@@ -14,7 +14,6 @@ export default function Login() {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
       </Head>
-
       <Navbar/>
       <main className="h-auto md:h-screen p-10 flex justify-center">
         <div className="flex items-center justify-center">
