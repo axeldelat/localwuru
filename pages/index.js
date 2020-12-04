@@ -27,6 +27,14 @@ export default function Home() {
 
       <Navbar/>
       <main>
+      <section className="hero relative">
+          <h1 id="title" className="text-white text-center text-5xl absolute font-extralight"><span className="block">Experiencias increíbles,</span><span className="block">contadas por personas únicas</span></h1>
+        <div id="searchContainer" className="flex absolute">
+        <input className="searchBar w-96 h-10 rounded-sm" placeholder="Busca por ciudad"></input>
+          <img src="/images/Search.svg" className="relative right-7 cursor-pointer"></img>
+        </div>
+      </section>
+
         <section className="container mx-auto grid grid-cols-1 md:grid-cols-8 gap-4 p-10 md:p-32 ">
           <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Ciudades Recientes</h1></div>
           <div></div>

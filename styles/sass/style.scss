@@ -22,3 +22,18 @@ body {
   transform:rotate(-90deg)
 }
 
+.hero{
+  height:80vh;
+  background-image:url("/images/hero.jpg");
+  background-size:cover;
+}
+#title{
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%)
+}
+#searchContainer{
+  top:55%;
+  left:52.5%;
+  transform:translate(-50%,-50%)
+}
