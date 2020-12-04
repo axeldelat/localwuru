@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 
-
-
 class Navbar extends Component{
-    render() {
-        return (
+
+  render() {
+    return (
             <div className="shadow">
               <ul id="nav" className="flex justify-between text-sm">
                 <li className="mt-2 ml-5 shadow-none">
@@ -15,9 +14,20 @@ class Navbar extends Component{
                 </li>
                 <li>
                   <ul className="flex mr-5">
-                    <li className="mt-5 text-gray-700 mr-4"><a href="#">Descubre</a></li>
-                    <li className="mt-5 text-gray-700 mr-4"><a href="#">Iniciar Sesión</a></li>
-                    <li className="mt-4 bg-purple-600 text-white rounded-sm p-1"><a href="#">Regístrate</a></li>
+                    <li className="mt-5 text-gray-700 mr-4">
+                    <Link href="/search-results">
+                      <a>Descubre</a>
+                    </Link></li>
+                    <li className="mt-5 text-gray-700 mr-4">
+                      <Link href="/login">
+                        <a>Iniciar Sesión</a>
+                      </Link>
+                    </li>
+                    <li className="mt-4 bg-purple-600 text-white rounded-sm p-1">
+                    <Link href="/new-user">
+                      <a>Regístrate</a>
+                    </Link>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -27,3 +37,4 @@ class Navbar extends Component{
 }
 
 export default Navbar
+

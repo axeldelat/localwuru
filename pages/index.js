@@ -64,8 +64,10 @@ export default function Home() {
           <CardCities />
           <div></div>
         </section>
+
+
         <section className="w-screen shadow-2xl">
-        <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-10 flex flex-col justify-center">
             <img className="object-contain w-full" src="/images/graphiclw.png"/>
           </div>
@@ -77,7 +79,7 @@ export default function Home() {
             </div>
             <div>
             <Link href="/faq">
-              <button class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded" >
+              <button className="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded" >
                 Saber Más
               </button>
             </Link>
