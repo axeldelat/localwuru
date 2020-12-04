@@ -11,7 +11,7 @@ function CallToAction() {
         />
       <p className="font-extrabold text-4xl text-center mb-10">Comparte tu Experiencia Local</p>
       <Link href="/new-experience">
-        <button class="text-2xl bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded mb-10">
+        <button className="text-2xl bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded mb-10">
           Publicar
         </button>
       </Link>
