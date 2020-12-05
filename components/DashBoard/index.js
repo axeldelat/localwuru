@@ -5,6 +5,11 @@ import Link from 'next/link'
 import MyAccount from './MyAccount'
 
 class DashBoard extends Component{
+  constructor(props) {
+  super(props);
+  this.state = {
+    activeView: "My Account"
+  }}
 
   render() {
     return (
