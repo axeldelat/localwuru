@@ -4,6 +4,13 @@ import Link from 'next/link'
 
 class DashBoard extends Component{
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeView:
+    }
+  }
+
   render() {
     return (
             <form>
@@ -12,7 +19,7 @@ class DashBoard extends Component{
                   className="block text-gray-700 text-sm font-normal mb-2"
                   for="full-name"
                 >
-                  Nombre Completo
+                  Nombre Completo {this.state.date.toLocaleTimeString()}
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -20,6 +27,7 @@ class DashBoard extends Component{
                   type="text"
                   required
                   autofocus
+                  disabled
                   placeholder=""
                 />
               </div>
@@ -36,6 +44,7 @@ class DashBoard extends Component{
                     type="text"
                     required
                     autofocus
+                    disabled
                     placeholder="Ej: 🤠Traveller & 👽 Sci-Fi Fan"
                   />
               </div>
@@ -52,6 +61,7 @@ class DashBoard extends Component{
                     type="number"
                     required
                     autofocus
+                    disabled
                     placeholder="Ej: +52 1234 5678 90"
                   />
               </div>
@@ -68,6 +78,7 @@ class DashBoard extends Component{
                     type="email"
                     required
                     autofocus
+                    disabled
                     placeholder="Ej: joe@gmail.com"
                   />
               </div>
@@ -84,6 +95,7 @@ class DashBoard extends Component{
                     type="text"
                     required
                     autofocus
+                    disabled
                     placeholder="Ej: paypal.me/joe"
                   />
               </div>
@@ -100,6 +112,7 @@ class DashBoard extends Component{
                     name="gender"
                     type="select"
                     required
+                    disabled
                     autofocus
                   >
                     <option disabled selected>Selecciona</option>
@@ -120,6 +133,7 @@ class DashBoard extends Component{
                     name="birth"
                     type="date"
                     required
+                    disabled
                     autofocus
                   />
               </div>
@@ -135,6 +149,7 @@ class DashBoard extends Component{
                   rows="5"
                   name="bio"
                   required
+                  disabled
                   autofocus
                   />
               </div>
@@ -168,7 +183,7 @@ class DashBoard extends Component{
                   type="password"
                   required
                   autofocus
-                  placeholder=""
+                  placeholder="**********"
                 />
               </div>
               <div class="flex items-center justify-between">
