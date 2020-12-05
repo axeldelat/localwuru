@@ -9,7 +9,7 @@ class DashBoard extends Component{
   render() {
     return (
             <div className="h-100 bg-gray-900 bg-opacity-75 inset-0 fixed flex flex-row-reverse">
-              <sidebar className="w-11/12 md:w-2/6 bg-purple-50	 h-full fixed p-6 overflow-auto">
+              <sidebar className="w-11/12 md:w-1/5 bg-purple-50	 h-full fixed p-6 overflow-auto">
                 <div className="grid grid-cols-1">
 
                   <div className="mb-6 col-span-1 p-6 flex flex-row items-center rounded bg-white">
