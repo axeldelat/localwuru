@@ -8,7 +8,6 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
-import CardCities from '../components/CardCities'
 
 // Load Source Sans Pro typeface
 // require('typeface-source-sans-pro')
@@ -35,13 +34,47 @@ export default function Home() {
         </div>
       </section>
 
-        <section className="container mx-auto grid grid-cols-1 md:grid-cols-8 gap-4 p-10 md:p-32 ">
-          <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Ciudades Recientes</h1></div>
-          <div></div>
-          <CardCities />
-          <CardCities />
-          <CardCities />
-          <div></div>
+        <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 p-10 md:p-32 ">
+          <div className="col-span-1 md:col-span-9"><h1 className="text-center text-5xl mb-5">Ciudades Disponibles</h1></div>
+          <Link href="/?Ciudaddeme">
+          <a>
+            <div className="col-span-1 md:col-span-3 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+            style={{
+              backgroundImage: "url(" + "/images/cdmx.jpg" + ")",
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat'
+            }}>
+              <h3 className="text-white font-bold text-5xl text-center">Ciudad de México</h3>
+            </div>
+          </a>
+          </Link>
+          <Link href="/?Monterry">
+            <a>
+              <div className="col-span-1 md:col-span-3 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+              style={{
+                backgroundImage: "url(" + "/images/monterrey.jpg" + ")",
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+              }}>
+                <h3 className="text-white font-bold text-5xl text-center">Monterrey</h3>
+              </div>
+            </a>
+          </Link>
+          <Link href="/?Playadelcarmen">
+            <a>
+              <div className="col-span-1 md:col-span-3 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+              style={{
+                backgroundImage: "url(" + "/images/playadelcarmen.jpg" + ")",
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+              }}>
+                <h3 className="text-white font-bold text-5xl text-center">Playa del Carmen</h3>
+              </div>
+            </a>
+          </Link>
         </section>
         <section className="w-screen shadow-2xl">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
