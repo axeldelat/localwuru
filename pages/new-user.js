@@ -1,11 +1,47 @@
 import Head from 'next/head'
 import styles from '../styles/sass/style.scss'
+import { useState } from 'react'
+
 
 //Components
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 export default function NewUser()  {
+  const [name, setName] = useState('')
+  const [presentation, setPresentation] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [paypalme, setPaypalMe] = useState('')
+  const [gender, setGender] = useState('')
+  const [birthdate, setBirthDate] = useState('')
+  const [bio, setBio] = useState('')
+
+
+  const addUser = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/signup', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          presentation: presentation,
+          phone: phone,
+          email: email,
+          password: password,
+          paypalme: paypalme,
+          gender: gender,
+          birthdate: birthdate,
+          bio: bio
+        })
+      })
+    } catch(err) { }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -21,160 +57,178 @@ export default function NewUser()  {
               Registro de Usuario
             </h1>
             <form className="h-full overflow-auto  w-full h-full flex flex-col">
-              <div className="mb-4">
-                <label
-                  className="block text-gray-700 text-sm font-normal mb-2"
-                  for="full-name"
-                >
-                  Nombre Completo
-                </label>
-                <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  name="full-name"
-                  type="text"
-                  required
-                  autofocus
-                  placeholder=""
-                />
-              </div>
-              <div className="mb-4">
-                <label
+                <div className="mb-4">
+                  <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="presentation"
+                    for="name"
                   >
-                    Presentation
+                    Nombre Completo
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="Presentation"
+                    name="name"
                     type="text"
                     required
                     autofocus
-                    placeholder="Ej: 🤠Traveller & 👽 Sci-Fi Fan"
+                    placeholder=""
+
+                    value={name}
+                    onChange={e => setName(e.target.value)}
                   />
-              </div>
-              <div className="mb-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    for="cellphone"
-                  >
-                    Celular
-                  </label>
-                  <input
+                </div>
+                <div className="mb-4">
+                  <label
+                      className="block text-gray-700 text-sm font-normal mb-2"
+                      for="presentation"
+                    >
+                      Presentation
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      name="Presentation"
+                      type="text"
+                      required
+                      autofocus
+                      placeholder="Ej: 🤠Traveller & 👽 Sci-Fi Fan"
+
+                      value={presentation}
+                      onChange={e => setPresentation(e.target.value)}
+                    />
+                </div>
+                <div className="mb-4">
+                  <label
+                      className="block text-gray-700 text-sm font-normal mb-2"
+                      for="phone"
+                    >
+                      Celular
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      name="phone"
+                      type="number"
+                      required
+                      autofocus
+                      placeholder="Ej: +52 1234 5678 90"
+
+                      value={phone}
+                      onChange={e => setPhone(e.target.value)}
+                    />
+                </div>
+                <div className="mb-4">
+                  <label
+                      className="block text-gray-700 text-sm font-normal mb-2"
+                      for="email"
+                    >
+                      Email
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      name="email"
+                      type="email"
+                      required
+                      autofocus
+                      placeholder="Ej: joe@gmail.com"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="mb-4">
+                  <label
+                      className="block text-gray-700 text-sm font-normal mb-2"
+                      for="email"
+                    >
+                      Password
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      name="password"
+                      type="password"
+                      required
+                      autofocus
+                      placeholder="Ej: joe@gmail.com"
+                      value={password}
+                      onChange={e => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className="mb-4">
+                  <label
+                      className="block text-gray-700 text-sm font-normal mb-2"
+                      for="linkpaypalme"
+                    >
+                      Link Paypal.Me (Acepta Donativos)
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      name="linkpaypalme"
+                      type="text"
+                      required
+                      autofocus
+                      placeholder="Ej: paypal.me/joe"
+                      value={paypalme}
+                      onChange={e => setPaypalMe(e.target.value)}
+                    />
+                </div>
+                <div className="mb-4">
+                  <label
+                      className="block text-gray-700 text-sm font-normal mb-2"
+                      for="gender"
+                    >
+                      Género
+                    </label>
+                    <select
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="gender"
+                      name="gender"
+                      type="select"
+                      required
+                      autofocus
+
+                      value={gender}
+                      onChange={e => setGender(e.target.value)}
+                    >
+                      <option selected> --Selecciona una opción-- </option>
+                      <option value="male">Masculino</option>
+                      <option value="female">Female</option>
+                      <option value="other">Otro</option>
+                    </select>
+                </div>
+                <div className="mb-4">
+                  <label
+                      className="block text-gray-700 text-sm font-normal mb-2"
+                      for="birth"
+                    >
+                      Fecha de Nacimiento
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      name="birth"
+                      type="date"
+                      required
+                      autofocus
+
+                      value={birthdate}
+                      onChange={e => setBirthDate(e.target.value)}
+                    />
+                </div>
+                <div className="">
+                  <label
+                      className="block text-gray-700 text-sm font-normal mb-2"
+                      for="bio"
+                    >
+                      Bio
+                    </label>
+                    <textarea
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="cellphone"
-                    type="number"
+                    rows="5"
+                    name="bio"
                     required
                     autofocus
-                    placeholder="Ej: +52 1234 5678 90"
-                  />
-              </div>
-              <div className="mb-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    for="email"
-                  >
-                    Email
-                  </label>
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="email"
-                    type="email"
-                    required
-                    autofocus
-                    placeholder="Ej: joe@gmail.com"
-                  />
-              </div>
-              <div className="mb-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    for="linkpaypalme"
-                  >
-                    Link Paypal.Me
-                  </label>
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="linkpaypalme"
-                    type="text"
-                    required
-                    autofocus
-                    placeholder="Ej: paypal.me/joe"
-                  />
-              </div>
-              <div className="mb-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    for="paypal"
-                  >
-                    Aceptar Donaciones Paypal
-                  </label>
-                  <select
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="paypal"
-                    name="paypal"
-                    type="select"
-                    required
-                    autofocus
-                  >
-                    <option disabled selected>Selecciona</option>
-                    <option value="true">Si</option>
-                    <option value="false">No</option>
-                    <option value="family">Familiar</option>
-                  </select>
-                  <p className="block text-gray-500 text-xs font-normal my-2">Tu email debe ser el email de tu cuenta paypal.</p>
-              </div>
-              <div className="mb-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    for="gender"
-                  >
-                    Género
-                  </label>
-                  <select
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="gender"
-                    name="gender"
-                    type="select"
-                    required
-                    autofocus
-                  >
-                    <option disabled selected>Selecciona</option>
-                    <option value="male">Masculino</option>
-                    <option value="female">Female</option>
-                    <option value="other">Otro</option>
-                  </select>
-              </div>
-              <div className="mb-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    for="birth"
-                  >
-                    Fecha de Nacimiento
-                  </label>
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="birth"
-                    type="date"
-                    required
-                    autofocus
-                  />
-              </div>
-              <div className="">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    for="bio"
-                  >
-                    Bio
-                  </label>
-                  <textarea
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  rows="5"
-                  name="bio"
-                  required
-                  autofocus
-                  />
-              </div>
-              <div className="mt-4">
+
+                    value={bio}
+                    onChange={e => setBio(e.target.value)}
+                    />
+                </div>
+              {/* <div className="mt-4">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
                     for="experience-duration"
@@ -190,10 +244,14 @@ export default function NewUser()  {
                 <button id="button" className="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
                   Upload a file
                 </button>
+              </div> */}
+              <div className="flex items-center justify-between">
+                <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700"
+                type="submit"
+                onClick={addUser}>
+                Enviar
+                </button>
               </div>
-              <div class="flex items-center justify-between">
-              <button class="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">Enviar</button>
-            </div>
             </form>
           </div>
         </section>
