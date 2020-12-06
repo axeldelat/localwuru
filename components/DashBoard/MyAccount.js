@@ -2,14 +2,7 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 
-class DashBoard extends Component{
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeView:
-    }
-  }
+class MyAccount extends Component{
 
   render() {
     return (
@@ -19,7 +12,7 @@ class DashBoard extends Component{
                   className="block text-gray-700 text-sm font-normal mb-2"
                   for="full-name"
                 >
-                  Nombre Completo {this.state.date.toLocaleTimeString()}
+                  Nombre Completo
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -194,4 +187,4 @@ class DashBoard extends Component{
     }
 }
 
-export default DashBoard
+export default MyAccount

@@ -3,13 +3,38 @@ import Link from 'next/link'
 
 //Components
 import MyAccount from './MyAccount'
+import MyBucketList from './MyBucketList'
+import Messages from './Messages'
 
 class DashBoard extends Component{
   constructor(props) {
   super(props);
   this.state = {
-    activeView: "My Account"
-  }}
+    activeView: null
+  }
+
+  this.handleClick = this.handleClick.bind(this)
+}
+
+  handleClick(view) {
+    this.setState(state => ({
+      activeView: view
+    }));
+  }
+
+  activeView() {
+    if(this.state.activeView === "My Account"){
+      return <MyAccount />
+    } if(this.state.activeView === "My Bucket List"){
+      return <MyBucketList />
+    } if(this.state.activeView === "Messages"){
+      return <Messages />
+    }
+    else {
+      return "Noma"
+    }
+  }
+
 
   render() {
     return (
@@ -24,28 +49,26 @@ class DashBoard extends Component{
                       <p className="font-bold">🌊 Playa Presentation</p>
                     </div>
                   </div>
-
                   <div className="col-span-1 flex justify-between mb-6 ">
-                    <button className="transition duration-500 ease-in-out bg-transparent font-normal border border-purple-700 hover:bg-purple-700 text-purple-700 hover:text-white md:rounded  text-xs py-1 px-2" >
+                    <button onClick={()=> {this.handleClick("My Account")}} className="transition duration-500 ease-in-out bg-transparent font-normal border border-purple-700 hover:bg-purple-700 text-purple-700 hover:text-white md:rounded  text-xs py-1 px-2" >
                       Mi cuenta
                     </button>
-                    <button className="transition duration-500 ease-in-out bg-transparent font-normal border border-purple-700 hover:bg-purple-700 text-purple-700 hover:text-white md:rounded  text-xs py-1 px-2" >
+                    <button onClick={()=> {this.handleClick("My Bucket List")}} className="transition duration-500 ease-in-out bg-transparent font-normal border border-purple-700 hover:bg-purple-700 text-purple-700 hover:text-white md:rounded  text-xs py-1 px-2" >
                       Mi Bucket List
                     </button>
-                    <button className="transition duration-500 ease-in-out bg-transparent font-normal border border-purple-700 hover:bg-purple-700 text-purple-700 hover:text-white md:rounded text-xs py-1 px-2" >
+                    <button onClick={()=> {this.handleClick("My Experiences")}} className="transition duration-500 ease-in-out bg-transparent font-normal border border-purple-700 hover:bg-purple-700 text-purple-700 hover:text-white md:rounded text-xs py-1 px-2" >
                       Mis Experiencias
                     </button>
-                    <button className="transition duration-500 ease-in-out bg-transparent font-normal border border-purple-700 hover:bg-purple-700 text-purple-700 hover:text-white md:rounded text-xs py-1 px-2" >
+                    <button onClick={()=> {this.handleClick("Messages")}} className="transition duration-500 ease-in-out bg-transparent font-normal border border-purple-700 hover:bg-purple-700 text-purple-700 hover:text-white md:rounded text-xs py-1 px-2" >
                       Mensajes
                     </button>
                   </div>
 
                   <div className="col-span-1 p-6 flex flex-row items-center rounded bg-white">
-                    <MyAccount />
+
+                    {this.activeView()}
+
                   </div>
-
-
-                    <p className="text-justify mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac enim malesuada, tempor nisl id, malesuada purus. Donec imperdiet urna in mi venenatis, vitae fringilla dui ornare.</p>
                 </div>
 
               </sidebar>
