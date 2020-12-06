@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
+import DashBoard from '../DashBoard/MyBucketList';
+
+// import DashBoard from '../DashBoard'
 
 class Navbar extends Component{
 
-  render() {
+
+
+
+  render () {
+    // const activeDashboard = this.state.activeDashboard
+
     return (
             <div>
               <ul id="nav" className="flex justify-between text-xs">
@@ -23,6 +31,11 @@ class Navbar extends Component{
                         <a>Iniciar Sesión</a>
                       </Link>
                     </li>
+                    <li className="mt-5 text-gray-700 mr-4">
+                      <Link href="/">
+                        <a onClick={this.setActiveDashboard}>Mi Cuenta</a>
+                      </Link>
+                    </li>
                     <li className="mt-4 bg-purple-600 text-white rounded-sm p-1">
                     <Link href="/new-user">
                       <a>Regístrate</a>
@@ -32,9 +45,10 @@ class Navbar extends Component{
                 </li>
               </ul>
             </div>
-        );
-    }
+        )
+  }
 }
 
 export default Navbar
+
 
