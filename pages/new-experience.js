@@ -340,7 +340,7 @@ export default function NewExperiences() {
                   Upload a file
                 </button>
               </div> */}
-              <div className="m-4">
+              <div className="m-0">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
                     htmlFor="recommendations"
@@ -358,7 +358,7 @@ export default function NewExperiences() {
                   onChange={e => setRecommendations(e.target.value)}
                   />
               </div>
-              <div className="m-4">
+              <div className="m-0">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
                     htmlFor="description"
