@@ -45,7 +45,7 @@ export default function NewUser()  {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Registro de Usuario- LocalWuru</title>
+        <title>Registro de Usuario - LocalWuru</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -60,7 +60,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="name"
+                    htmlFor="name"
                   >
                     Nombre Completo
                   </label>
@@ -69,7 +69,7 @@ export default function NewUser()  {
                     name="name"
                     type="text"
                     required
-                    autofocus
+                    autoFocus
                     placeholder=""
 
                     value={name}
@@ -79,7 +79,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                       className="block text-gray-700 text-sm font-normal mb-2"
-                      for="presentation"
+                      htmlFor="presentation"
                     >
                       Presentation
                     </label>
@@ -88,7 +88,7 @@ export default function NewUser()  {
                       name="Presentation"
                       type="text"
                       required
-                      autofocus
+                      autoFocus
                       placeholder="Ej: 🤠Traveller & 👽 Sci-Fi Fan"
 
                       value={presentation}
@@ -98,7 +98,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                       className="block text-gray-700 text-sm font-normal mb-2"
-                      for="phone"
+                      htmlFor="phone"
                     >
                       Celular
                     </label>
@@ -107,7 +107,7 @@ export default function NewUser()  {
                       name="phone"
                       type="number"
                       required
-                      autofocus
+                      autoFocus
                       placeholder="Ej: +52 1234 5678 90"
 
                       value={phone}
@@ -117,7 +117,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                       className="block text-gray-700 text-sm font-normal mb-2"
-                      for="email"
+                      htmlFor="email"
                     >
                       Email
                     </label>
@@ -126,7 +126,7 @@ export default function NewUser()  {
                       name="email"
                       type="email"
                       required
-                      autofocus
+                      autoFocus
                       placeholder="Ej: joe@gmail.com"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
@@ -135,7 +135,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                       className="block text-gray-700 text-sm font-normal mb-2"
-                      for="email"
+                      htmlFor="email"
                     >
                       Password
                     </label>
@@ -144,7 +144,7 @@ export default function NewUser()  {
                       name="password"
                       type="password"
                       required
-                      autofocus
+                      autoFocus
                       placeholder="Ej: joe@gmail.com"
                       value={password}
                       onChange={e => setPassword(e.target.value)}
@@ -153,7 +153,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                       className="block text-gray-700 text-sm font-normal mb-2"
-                      for="linkpaypalme"
+                      htmlFor="linkpaypalme"
                     >
                       Link Paypal.Me (Acepta Donativos)
                     </label>
@@ -162,7 +162,7 @@ export default function NewUser()  {
                       name="linkpaypalme"
                       type="text"
                       required
-                      autofocus
+                      autoFocus
                       placeholder="Ej: paypal.me/joe"
                       value={paypalme}
                       onChange={e => setPaypalMe(e.target.value)}
@@ -171,7 +171,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                       className="block text-gray-700 text-sm font-normal mb-2"
-                      for="gender"
+                      htmlFor="gender"
                     >
                       Género
                     </label>
@@ -181,7 +181,7 @@ export default function NewUser()  {
                       name="gender"
                       type="select"
                       required
-                      autofocus
+                      autoFocus
 
                       value={gender}
                       onChange={e => setGender(e.target.value)}
@@ -195,7 +195,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                       className="block text-gray-700 text-sm font-normal mb-2"
-                      for="birth"
+                      htmlFor="birth"
                     >
                       Fecha de Nacimiento
                     </label>
@@ -204,7 +204,7 @@ export default function NewUser()  {
                       name="birth"
                       type="date"
                       required
-                      autofocus
+                      autoFocus
 
                       value={birthdate}
                       onChange={e => setBirthDate(e.target.value)}
@@ -213,7 +213,7 @@ export default function NewUser()  {
                 <div className="">
                   <label
                       className="block text-gray-700 text-sm font-normal mb-2"
-                      for="bio"
+                      htmlFor="bio"
                     >
                       Bio
                     </label>
@@ -222,7 +222,7 @@ export default function NewUser()  {
                     rows="5"
                     name="bio"
                     required
-                    autofocus
+                    autoFocus
 
                     value={bio}
                     onChange={e => setBio(e.target.value)}
@@ -231,7 +231,7 @@ export default function NewUser()  {
               {/* <div className="mt-4">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="experience-duration"
+                    htmlFor="experience-duration"
                   >
                     Avatar
                   </label>
