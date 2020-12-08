@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/sass/style.scss'
 import { useState } from 'react'
 
+
 //Components
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -44,6 +45,49 @@ export default function NewExperiences() {
         })
       })
     } catch(err) { }
+  }
+
+  //Uppy
+
+  const UppyNoSSR = uppy(
+    () => import('uppy'),
+    { ssr: false }
+  )
+
+  UppyNoSSR = new Uppy({
+    meta: { type: 'avatar' },
+    restrictions: { maxNumberOfFiles: 1 },
+    autoProceed: true
+  })
+
+  uppy.use(Tus, { endpoint: '/upload' })
+
+  uppy.on('complete', (result) => {
+    const url = result.successful[0].uploadURL
+    store.dispatch({
+      type: 'SET_USER_AVATAR_URL',
+      payload: { url: url }
+    })
+  })
+
+  const AvatarPicker = ({ currentAvatar }) => {
+    return (
+      <div>
+        <img src={currentAvatar} alt="Current Avatar" />
+        <DragDrop
+          uppy={uppy}
+          locale={{
+            strings: {
+              // Text to show on the droppable area.
+              // `%{browse}` is replaced with a link that opens the system file selection dialog.
+              dropHereOr: 'Drop here or %{browse}',
+              // Used as the label for the link that opens the system file selection dialog.
+              browse: 'browse'
+            }
+          }}
+        />
+      </div>
+    )
   }
 
   return (
@@ -331,6 +375,11 @@ export default function NewExperiences() {
                     Portada
                   </label>
               </div>
+
+              <div>
+                {AvatarPicker()}
+              </div>
+
               {/* <div className="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
                 <p className="hidden md:block mb-3 font-semibold text-gray-900 flex flex-wrap justify-center ">
                   <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
