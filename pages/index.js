@@ -9,10 +9,7 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
-
-//import CardCities from '../components/CardCities'
-import SearchBar from '../components/SearchBar'
-import Experience from '../components/Experience'
+import DashBoard from '../components/DashBoard'
 
 // Load Source Sans Pro typeface
 // require('typeface-source-sans-pro')
@@ -47,9 +44,17 @@ export default function Home() {
           </form>
       </section>
 
+<<<<<<< HEAD
 
         <section className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">
           <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Experiencias Recientes</h1></div>
+=======
+      <DashBoard/>
+
+
+        <section className="container mx-auto grid grid-cols-1 md:grid-cols-8 gap-4 p-10 md:p-32 ">
+          <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Ciudades Recientes</h1></div>
+>>>>>>> feature/myaccount
           <div></div>
           <Experience />
           <Experience />
