@@ -3,6 +3,8 @@ import styles from '../styles/sass/style.scss'
 import { useState } from 'react'
 
 
+//Agregar handlers
+
 //Components
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -79,7 +81,7 @@ export default function NewUser()  {
               <div className="mb-4">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="gender"
+                    htmlFor="gender"
                   >
                     Género
                   </label>
@@ -89,7 +91,7 @@ export default function NewUser()  {
                     name="gender"
                     type="select"
                     required
-                    autofocus
+                    autoFocus
                   >
                     <option disabled selected>Selecciona</option>
                     <option value="male">Masculino</option>
@@ -100,7 +102,7 @@ export default function NewUser()  {
               <div className="mb-4">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="birth"
+                    htmlFor="birth"
                   >
                     Fecha de Nacimiento
                   </label>
@@ -142,7 +144,7 @@ export default function NewUser()  {
               <div className="my-4">
                 <label
                   className="block text-gray-700 text-sm font-normal mb-2"
-                  for="password"
+                  htmlFor="password"
                 >
                   Password
                 </label>
@@ -151,12 +153,12 @@ export default function NewUser()  {
                   name="password"
                   type="password"
                   required
-                  autofocus
+                  autoFocus
                   placeholder=""
                 />
               </div>
-              <div class="flex items-center justify-between">
-              <button class="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">Enviar</button>
+              <div className="flex items-center justify-between">
+              <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">Enviar</button>
               </div>
             </form>
           </div>
