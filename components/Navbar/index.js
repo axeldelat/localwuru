@@ -1,54 +1,71 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import DashBoard from '../DashBoard/MyBucketList';
+import DashBoard from '../DashBoard/';
+
+// Fontawesome
+import { ReactElement } from 'react'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import DashBoard from '../DashBoard'
 
-class Navbar extends Component{
-
-
-
-
-  render () {
-    // const activeDashboard = this.state.activeDashboard
-
-    return (
-            <div className="shadow">
-              <ul id="nav" className="flex justify-between text-sm">
-                <li className="mt-2 ml-5 shadow-none">
-                <Link href="/">
-                  <a><img src="/images/localwuru.svg"/></a>
+export default function Navbar({ fixed }) {
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  return (
+    <>
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white">
+        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+            <Link href="/">
+              <a><img src="/images/localwuru.svg"/></a>
+            </Link>
+            <button
+              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-purple-700 block lg:hidden outline-none focus:outline-none w-12"
+              type="button"
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              <FontAwesomeIcon icon={faBars} color="white" />
+            </button>
+          </div>
+          <div
+            className={
+              "lg:flex flex-grow items-center" +
+              (navbarOpen ? " flex" : " hidden")
+            }
+            id="example-navbar-danger"
+          >
+            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+              <li className="nav-item">
+                <Link href="/search-results">
+                  <a className="px-3 py-5 flex items-center text-sm font-light uppercase leading-snug text-gray-700 hover:opacity-75">
+                  Descubre
+                  </a>
                 </Link>
-                </li>
-                <li>
-                  <ul className="flex mr-5">
-                    <li className="mt-5 text-gray-700 mr-4">
-                    <Link href="/search-results">
-                      <a>Descubre</a>
-                    </Link></li>
-                    <li className="mt-5 text-gray-700 mr-4">
-                      <Link href="/login">
-                        <a>Iniciar Sesión</a>
-                      </Link>
-                    </li>
-                    <li className="mt-5 text-gray-700 mr-4">
-                      <Link href="/">
-                        <a onClick={this.setActiveDashboard}>Mi Cuenta</a>
-                      </Link>
-                    </li>
-                    <li className="mt-4 bg-purple-600 text-white rounded-sm p-1">
-                    <Link href="/new-user">
-                      <a>Regístrate</a>
-                    </Link>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-        )
-  }
+              </li>
+              <li className="nav-item">
+                <Link href="/">
+                  <a className="px-3 py-5 flex items-center text-sm font-light uppercase leading-snug text-gray-700 hover:opacity-75"
+                  // onClick={this.setActiveDashboard}
+                  >
+                  Mi Cuenta
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/new-user">
+                  <a className="items-center">
+                    <button class="h-10 px-5 m-2 text-purple-100 uppercase font-bold transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800">Regístrate</button>
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item flex content-center py-3 pl-2">
+                  <img class="inline object-cover w-8 h-8 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <DashBoard />
+      </nav>
+    </>
+  );
 }
-
-export default Navbar
-
-

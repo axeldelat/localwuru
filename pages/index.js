@@ -37,13 +37,20 @@ export default function Home() {
       <Navbar/>
       <main>
 
-      <section className="hero relative">
-          <h1 id="title" className="text-white text-center text-5xl absolute font-extralight"><span className="block">Experiencias increíbles,</span><span className="block">contadas por personas únicas</span></h1>
-          <form id="searchContainer" className="flex absolute">
-            <input className="searchBar h-10 rounded-sm" placeholder="Busca por ciudad" onChange={e => setSearch(e.target.value)}/>
-            <img src="/images/Search.svg" className="relative right-7 cursor-pointer" onClick={getExperiences}/>
+      <section className="hero grid grid-cols-1 md:grid-cols-12 grid-rows-2 h-screen p-10 md:p-0"
+      style={{
+        backgroundImage: "url(" + "/images/hero.jpg" + ")",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }}>
+        <h1 className=" self-end mb-4 col-span-1 md:col-span-12  text-white text-center text-5xl font-extralight">Experiencias increíbles,<br />contadas por personas únicas</h1>
+          <form className="col-span-1 md:col-span-9 md:col-start-3 row-start-2 ">
+          <input class="w-full text-center h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" type="text" placeholder="Buscar por Ciudad" onChange={e => setSearch(e.target.value)}/>
+
           </form>
       </section>
+      
 
 
         <section className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">

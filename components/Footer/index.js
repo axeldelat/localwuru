@@ -1,23 +1,26 @@
 import React, { Component } from 'react'
+import Link from 'next/link'
+import DashBoard from '../DashBoard';
+
 
 class Footer extends Component{
     render() {
         return (
-            <div>
-              <ul id="footer" className="flex justify-between shadow-sm text-sm">
+            <footer>
+              <ul  className="flex justify-between content-center shadow-sm text-sm py-5 px-4">
                 <li className="flex mt-2">
-                    <a href="#" className="mt-1 ml-5"><img src="/images/Group6.svg"/></a>
-                    <div className="mt-2 ml-2 text-gray-700">Local Wuru Copyright</div>
+                    <img className="inline" src="/images/Group6.svg"/>
+                    <span>Local Wuru &#169;Copyright 2021</span>
                 </li>
-                <li>
-                  <ul className="flex mr-5 mb-2">
-                    <li className="mt-4 text-gray-700 mr-4"><a href="#">¿Qué es?</a></li>
-                    <li className="mt-4 text-gray-700 mr-4"><a href="#">Aviso de Privacidad</a></li>
-                    <li className="mt-4 text-gray-700"><a href="#">Mapa del sitio</a></li>
-                  </ul>
+                <li className="flex mt-2">
+                  <Link href="/faq">
+                    <a>
+                      ¿Qué es?
+                    </a>
+                  </Link>
                 </li>
               </ul>
-            </div>
+            </footer>
         );
     }
 }
