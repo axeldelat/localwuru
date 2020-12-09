@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import SearchBar from '../components/SearchBar'
 import styles from '../styles/sass/style.scss'
-import Experience from '../components/Experience'
+import ExperienceCard from '../components/ExperienceCard'
 import Link from 'next/link'
 
 import { useRouter } from 'next/router'
@@ -45,7 +45,7 @@ export default function App(){
         <div className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">
             {experiences.map(experience=>(
               <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
-                <Experience nameExperience={experience.nameExperience} city={experience.city}/>
+                <ExperienceCard nameExperience={experience.nameExperience} city={experience.city}/>
               </Link>
             ))}
             {
