@@ -3,6 +3,8 @@ import styles from '../styles/sass/style.scss'
 import { useState } from 'react'
 
 
+//Agregar handlers
+
 //Components
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -45,7 +47,7 @@ export default function NewUser()  {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Registro de Usuario- LocalWuru</title>
+        <title>Registro de Usuario - LocalWuru</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -60,7 +62,7 @@ export default function NewUser()  {
                 <div className="mb-4">
                   <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="name"
+                    htmlFor="name"
                   >
                     Nombre Completo
                   </label>
@@ -69,160 +71,47 @@ export default function NewUser()  {
                     name="name"
                     type="text"
                     required
-                    autofocus
+                    autoFocus
                     placeholder=""
 
                     value={name}
                     onChange={e => setName(e.target.value)}
                   />
-                </div>
-                <div className="mb-4">
-                  <label
-                      className="block text-gray-700 text-sm font-normal mb-2"
-                      for="presentation"
-                    >
-                      Presentation
-                    </label>
-                    <input
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      name="Presentation"
-                      type="text"
-                      required
-                      autofocus
-                      placeholder="Ej: 🤠Traveller & 👽 Sci-Fi Fan"
-
-                      value={presentation}
-                      onChange={e => setPresentation(e.target.value)}
-                    />
-                </div>
-                <div className="mb-4">
-                  <label
-                      className="block text-gray-700 text-sm font-normal mb-2"
-                      for="phone"
-                    >
-                      Celular
-                    </label>
-                    <input
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      name="phone"
-                      type="number"
-                      required
-                      autofocus
-                      placeholder="Ej: +52 1234 5678 90"
-
-                      value={phone}
-                      onChange={e => setPhone(e.target.value)}
-                    />
-                </div>
-                <div className="mb-4">
-                  <label
-                      className="block text-gray-700 text-sm font-normal mb-2"
-                      for="email"
-                    >
-                      Email
-                    </label>
-                    <input
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      name="email"
-                      type="email"
-                      required
-                      autofocus
-                      placeholder="Ej: joe@gmail.com"
-                      value={email}
-                      onChange={e => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className="mb-4">
-                  <label
-                      className="block text-gray-700 text-sm font-normal mb-2"
-                      for="email"
-                    >
-                      Password
-                    </label>
-                    <input
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      name="password"
-                      type="password"
-                      required
-                      autofocus
-                      placeholder="Ej: joe@gmail.com"
-                      value={password}
-                      onChange={e => setPassword(e.target.value)}
-                    />
-                </div>
-                <div className="mb-4">
-                  <label
-                      className="block text-gray-700 text-sm font-normal mb-2"
-                      for="linkpaypalme"
-                    >
-                      Link Paypal.Me (Acepta Donativos)
-                    </label>
-                    <input
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      name="linkpaypalme"
-                      type="text"
-                      required
-                      autofocus
-                      placeholder="Ej: paypal.me/joe"
-                      value={paypalme}
-                      onChange={e => setPaypalMe(e.target.value)}
-                    />
-                </div>
-                <div className="mb-4">
-                  <label
-                      className="block text-gray-700 text-sm font-normal mb-2"
-                      for="gender"
-                    >
-                      Género
-                    </label>
-                    <select
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="gender"
-                      name="gender"
-                      type="select"
-                      required
-                      autofocus
-
-                      value={gender}
-                      onChange={e => setGender(e.target.value)}
-                    >
-                      <option selected> --Selecciona una opción-- </option>
-                      <option value="male">Masculino</option>
-                      <option value="female">Female</option>
-                      <option value="other">Otro</option>
-                    </select>
-                </div>
-                <div className="mb-4">
-                  <label
-                      className="block text-gray-700 text-sm font-normal mb-2"
-                      for="birth"
-                    >
-                      Fecha de Nacimiento
-                    </label>
-                    <input
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      name="birth"
-                      type="date"
-                      required
-                      autofocus
-
-                      value={birthdate}
-                      onChange={e => setBirthDate(e.target.value)}
-                    />
-                </div>
-                <div className="">
-                  <label
-                      className="block text-gray-700 text-sm font-normal mb-2"
-                      for="bio"
-                    >
-                      Bio
-                    </label>
-                    <textarea
+              </div>
+              <div className="mb-4">
+                <label
+                    className="block text-gray-700 text-sm font-normal mb-2"
+                    htmlFor="gender"
+                  >
+                    Género
+                  </label>
+                  <select
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="gender"
+                    name="gender"
+                    type="select"
+                    required
+                    autoFocus
+                  >
+                    <option disabled selected>Selecciona</option>
+                    <option value="male">Masculino</option>
+                    <option value="female">Female</option>
+                    <option value="other">Otro</option>
+                  </select>
+              </div>
+              <div className="mb-4">
+                <label
+                    className="block text-gray-700 text-sm font-normal mb-2"
+                    htmlFor="birth"
+                  >
+                    Fecha de Nacimiento
+                  </label>
+                  <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     rows="5"
                     name="bio"
                     required
-                    autofocus
+                    autoFocus
 
                     value={bio}
                     onChange={e => setBio(e.target.value)}
@@ -231,7 +120,7 @@ export default function NewUser()  {
               {/* <div className="mt-4">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="experience-duration"
+                    htmlFor="experience-duration"
                   >
                     Avatar
                   </label>
@@ -251,6 +140,25 @@ export default function NewUser()  {
                 onClick={addUser}>
                 Enviar
                 </button>
+              </div>
+              <div className="my-4">
+                <label
+                  className="block text-gray-700 text-sm font-normal mb-2"
+                  htmlFor="password"
+                >
+                  Password
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="password"
+                  type="password"
+                  required
+                  autoFocus
+                  placeholder=""
+                />
+              </div>
+              <div className="flex items-center justify-between">
+              <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">Enviar</button>
               </div>
             </form>
           </div>

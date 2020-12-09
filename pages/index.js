@@ -9,9 +9,7 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
-
-//import CardCities from '../components/CardCities'
-import SearchBar from '../components/SearchBar'
+import DashBoard from '../components/DashBoard'
 import Experience from '../components/Experience'
 
 // Load Source Sans Pro typeface
@@ -50,18 +48,19 @@ export default function Home() {
 
         <section className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">
           <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Experiencias Recientes</h1></div>
-          <div></div>
+      {/* <DashBoard/> */}
           <Experience />
           <Experience />
           <Experience />
-          <div></div>
         </section>
 
         <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 p-10 md:p-32 ">
           <div className="col-span-1 md:col-span-9"><h1 className="text-center text-5xl mb-5">Ciudades Disponibles</h1></div>
           <Link href="/?Ciudaddeme">
           <a>
-            <div className="col-span-1  md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+            <div className="col-span-1  md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content ">
+          <a className="col-span-1 md:col-span-3">
+            <div className="h-24 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content"
             style={{
               backgroundImage: "url(" + "/images/cdmx.jpg" + ")",
               backgroundPosition: 'center',
@@ -73,8 +72,13 @@ export default function Home() {
           </a>
           </Link>
           <Link href="/?Monterrey">
+
             <a>
-              <div className="col-span-1 md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+              <div className="col-span-1 md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content ">
+
+            <a className="col-span-1 md:col-span-3">
+              <div className="h-24 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+
               style={{
                 backgroundImage: "url(" + "/images/monterrey.jpg" + ")",
                 backgroundPosition: 'center',
@@ -86,8 +90,12 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/?Playadelcarmen">
+
             <a>
-              <div className="col-span-1 md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+              <div className="col-span-1 md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content ">
+
+            <a className="col-span-1 md:col-span-3">
+              <div className="h-24 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
               style={{
                 backgroundImage: "url(" + "/images/playadelcarmen.jpg" + ")",
                 backgroundPosition: 'center',
