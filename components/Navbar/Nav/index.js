@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 export default function Nav({ fixed }, dashboardSwitch) {
+  console.log(dashboardSwitch)
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
@@ -44,7 +45,7 @@ export default function Nav({ fixed }, dashboardSwitch) {
               <li className="nav-item">
                 <Link href="#">
                   <a className="px-3 py-5 flex items-center text-sm font-light uppercase leading-snug text-gray-700 hover:opacity-75"
-                  onClick={dashboardSwitch}
+                  onClick={() => dashboardSwitch()}
                   >
                   Mi Cuenta
                   </a>
