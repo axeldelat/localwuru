@@ -9,7 +9,7 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
-import Experience from '../components/Experience'
+import ExperienceCard from '../components/ExperienceCard'
 
 // Load Source Sans Pro typeface
 // require('typeface-source-sans-pro')
@@ -52,15 +52,20 @@ export default function Home() {
 
 
 
-        <section className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">
-          <div className="col-span-1 md:col-span-8"><h1 className="text-center text-5xl mb-5">Experiencias Recientes</h1></div>
-      {/* <DashBoard/> */}
-          <Experience />
-          <Experience />
-          <Experience />
+        <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 p-10 md:p-32">
+          <div className="col-span-1 md:col-span-9"><h1 className="text-center text-5xl mb-5">Experiencias Recientes</h1></div>
+          <div className="col-span-3 row-start-2">
+            <ExperienceCard />
+          </div>
+          <div className="col-span-3 row-start-2">
+            <ExperienceCard />
+          </div>
+          <div className="col-span-3 row-start-2">
+            <ExperienceCard />
+          </div>
         </section>
 
-        <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 p-10 md:p-32 ">
+        <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 p-10 md:p-32">
           <div className="col-span-1 md:col-span-9"><h1 className="text-center text-5xl mb-5">Ciudades Disponibles</h1></div>
           <Link href="/?Ciudaddeme">
           <a className="col-span-1 md:col-span-3">
