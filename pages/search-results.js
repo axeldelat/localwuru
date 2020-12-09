@@ -43,9 +43,9 @@ export default function App(){
         <img src="/images/Search.svg" className="relative right-7 cursor-pointer" onClick={getExperiences}/>
       </form>
         <div className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">
-            {experiences.map(ExperienceCard=>(
-              <Link key={ExperienceCard._id} href={`/experiences/${encodeURIComponent(ExperienceCard._id)}`} passHref>
-                <ExperienceCard nameExperience={ExperienceCard.nameExperience} city={ExperienceCard.city}/>
+            {experiences.map(experience=>(
+              <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
+                <ExperienceCard nameExperience={experience.nameExperience} city={experience.city}/>
               </Link>
             ))}
             {

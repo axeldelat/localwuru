@@ -333,10 +333,6 @@ export default function NewExperiences() {
                   </label>
               </div>
 
-              <div>
-                {AvatarPicker()}
-              </div>
-
               {/* <div className="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
                 <p className="hidden md:block mb-3 font-semibold text-gray-900 flex flex-wrap justify-center ">
                   <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
