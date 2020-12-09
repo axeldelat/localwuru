@@ -159,7 +159,9 @@ export default function NewUser()  {
                 />
               </div>
               <div className="flex items-center justify-between">
-              <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">Enviar</button>
+              <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">
+                Enviar
+              </button>
               </div>
             </form>
           </div>

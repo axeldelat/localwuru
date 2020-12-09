@@ -24,7 +24,7 @@ export default function Nav({ fixed }, dashboardSwitch) {
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
-              <FontAwesomeIcon icon={faBars} color="white" />
+              <FontAwesomeIcon icon={faBars} color="white"/>
             </button>
           </div>
           <div
