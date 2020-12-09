@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-export default function Nav({ fixed }, dashboardSwitch) {
+export default function Nav({fixed, dashboardSwitch}) {
   console.log(dashboardSwitch)
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
