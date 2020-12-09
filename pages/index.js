@@ -46,13 +46,13 @@ export default function Home() {
         <h1 className=" self-end mb-4 col-span-1 md:col-span-12  text-white text-center text-5xl font-extralight">Experiencias increíbles,<br />contadas por personas únicas</h1>
           <form className="col-span-1 md:col-span-9 md:col-start-3 row-start-2 ">
           <input className="w-full text-center h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" type="text" placeholder="Buscar por Ciudad" onChange={e => setSearch(e.target.value)}/>
-
+          <img src="/images/Search.svg" className="relative right-7 cursor-pointer" onClick={getExperiences}/>
           </form>
       </section>
 
 
 
-        <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 p-10 md:p-32">
+        <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 md:p-32">
           <div className="col-span-1 md:col-span-9"><h1 className="text-center text-5xl mb-5">Experiencias Recientes</h1></div>
           <div className="col-span-3 ">
             <ExperienceCard />
@@ -70,28 +70,21 @@ export default function Home() {
             <h1 className="text-center text-5xl mb-5">Ciudades Disponibles</h1>
           </div>
           <Link href="/?Ciudaddeme">
-          <a className="col-span-1 md:col-span-3">
-              <div className="col-span-1  md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content ">
-              <a className="col-span-1 md:col-span-3">
-                <div className="h-24 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content"
-                  style={{
-                    backgroundImage: "url(" + "/images/cdmx.jpg" + ")",
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
-                  }}>
-                  <h3 className="text-white font-bold text-5xl text-center">Ciudad de México</h3>
-                </div>
-              </a>
-            </div>
-          </a>
-
+            <a className="col-span-1 md:col-span-3">
+              <div className="h-64 bg-white rounded-lg text-black shadow-md rounded-xl box-content flex justify-center items-center"
+                style={{
+                  backgroundImage: "url(" + "/images/cdmx.jpg" + ")",
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat'
+                }}>
+                <h3 className="text-white font-bold text-5xl text-center">Ciudad de México</h3>
+              </div>
+            </a>
           </Link>
           <Link href="/?Monterrey">
             <a className="col-span-1 md:col-span-3">
-              <div className="col-span-1 md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content">
-            <a className="col-span-1 md:col-span-3">
-              <div className="h-24 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+              <div className="h-64 bg-white rounded-lg text-black shadow-md rounded-xl box-content flex justify-center items-center"
               style={{
                 backgroundImage: "url(" + "/images/monterrey.jpg" + ")",
                 backgroundPosition: 'center',
@@ -100,15 +93,11 @@ export default function Home() {
               }}>
                 <h3 className="text-white font-bold text-5xl text-center">Monterrey</h3>
               </div>
-              </a>
-              </div>
             </a>
           </Link>
           <Link href="/?Playadelcarmen">
             <a className="col-span-1 md:col-span-3">
-              <div className="col-span-1 md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content ">
-            <a className="col-span-1 md:col-span-3">
-              <div className="h-24 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+              <div className="h-64 bg-white rounded-lg text-black  shadow-md rounded-xl box-content flex justify-center items-center"
               style={{
                 backgroundImage: "url(" + "/images/playadelcarmen.jpg" + ")",
                 backgroundPosition: 'center',
@@ -117,8 +106,6 @@ export default function Home() {
               }}>
                 <h3 className="text-white font-bold text-5xl text-center">Playa del Carmen</h3>
               </div>
-            </a>
-            </div>
             </a>
           </Link>
         </section>
