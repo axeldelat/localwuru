@@ -8,9 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-export default function Nav({ fixed }) {
+export default function Nav({ fixed }, dashboardSwitch) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  // const dashboardToogle = this.props.
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white">
@@ -43,9 +42,9 @@ export default function Nav({ fixed }) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/">
+                <Link href="#">
                   <a className="px-3 py-5 flex items-center text-sm font-light uppercase leading-snug text-gray-700 hover:opacity-75"
-                  // onClick={this.props.}
+                  onClick={dashboardSwitch}
                   >
                   Mi Cuenta
                   </a>
@@ -54,12 +53,12 @@ export default function Nav({ fixed }) {
               <li className="nav-item">
                 <Link href="/new-user">
                   <a className="items-center">
-                    <button class="h-10 px-5 m-2 text-purple-100 uppercase font-bold transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800">Regístrate</button>
+                    <button className="h-10 px-5 m-2 text-purple-100 uppercase font-bold transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800">Regístrate</button>
                   </a>
                 </Link>
               </li>
               <li className="nav-item flex content-center py-3 pl-2">
-                  <img class="inline object-cover w-8 h-8 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
+                  <img className="inline object-cover w-8 h-8 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
               </li>
             </ul>
           </div>

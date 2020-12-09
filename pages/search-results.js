@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import SearchBar from '../components/SearchBar'
 import styles from '../styles/sass/style.scss'
-import Experience from '../components/Experience'
+import ExperienceCard from '../components/ExperienceCard'
 import Link from 'next/link'
 
 import { useRouter } from 'next/router'
@@ -25,8 +25,8 @@ export default function App(){
     const data = await response.json()
     let allExperiences = data.data.experiences
     if (search !== ''){
-      let filteredExperiences = allExperiences.filter(experience =>{
-        return experience.city === search
+      let filteredExperiences = allExperiences.filter(ExperienceCard =>{
+        return ExperienceCard.city === search
       })
       setExperiences(filteredExperiences)
     } else{
@@ -43,9 +43,9 @@ export default function App(){
         <img src="/images/Search.svg" className="relative right-7 cursor-pointer" onClick={getExperiences}/>
       </form>
         <div className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">
-            {experiences.map(experience=>(
-              <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
-                <Experience nameExperience={experience.nameExperience} city={experience.city}/>
+            {experiences.map(ExperienceCard=>(
+              <Link key={ExperienceCard._id} href={`/experiences/${encodeURIComponent(ExperienceCard._id)}`} passHref>
+                <ExperienceCard nameExperience={ExperienceCard.nameExperience} city={ExperienceCard.city}/>
               </Link>
             ))}
             {
