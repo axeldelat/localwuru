@@ -61,7 +61,7 @@ export default function Home() {
           <div className="col-span-1 md:col-span-9"><h1 className="text-center text-5xl mb-5">Ciudades Disponibles</h1></div>
           <Link href="/?Ciudaddeme">
           <a>
-            <div className="col-span-1 md:col-span-3 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+            <div className="col-span-1  md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
             style={{
               backgroundImage: "url(" + "/images/cdmx.jpg" + ")",
               backgroundPosition: 'center',
@@ -74,7 +74,7 @@ export default function Home() {
           </Link>
           <Link href="/?Monterrey">
             <a>
-              <div className="col-span-1 md:col-span-3 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+              <div className="col-span-1 md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
               style={{
                 backgroundImage: "url(" + "/images/monterrey.jpg" + ")",
                 backgroundPosition: 'center',
@@ -87,7 +87,7 @@ export default function Home() {
           </Link>
           <Link href="/?Playadelcarmen">
             <a>
-              <div className="col-span-1 md:col-span-3 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+              <div className="col-span-1 md:col-span-1 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
               style={{
                 backgroundImage: "url(" + "/images/playadelcarmen.jpg" + ")",
                 backgroundPosition: 'center',
