@@ -10,8 +10,7 @@ class DashBoard extends Component{
   constructor(props) {
   super(props);
   this.state = {
-    activeView: "My Account",
-    activeDashboard: false
+
   }
 
   this.setDashboardView = this.setDashboardView.bind(this)
@@ -20,7 +19,6 @@ class DashBoard extends Component{
   setDashboardView(view) {
     this.setState(state => ({
       activeView: view,
-      activeDashboard: true
     }));
   }
 
@@ -39,9 +37,9 @@ class DashBoard extends Component{
 
 
   render() {
-    const isDashBoardActive = this.state.activeDashboard
+    const activeDashboard = this.props.activeDashboard
     return (
-      <div className={isDashBoardActive ? '' : 'hidden'}>
+      <div className={activeDashboard ? {activeDashboard} : 'hidden'}>
         <div onClick={() => this.setState({activeDashboard: false})} className="h-100 bg-gray-900 bg-opacity-75 inset-0 fixed flex flex-row-reverse">
           <sidebar className="w-11/12 md:w-1/5 bg-purple-50	 h-full fixed p-6 overflow-auto">
             <div className="grid grid-cols-1">

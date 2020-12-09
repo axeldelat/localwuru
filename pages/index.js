@@ -9,7 +9,6 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
-import DashBoard from '../components/DashBoard'
 import Experience from '../components/Experience'
 
 // Load Source Sans Pro typeface
@@ -50,7 +49,7 @@ export default function Home() {
 
           </form>
       </section>
-      
+
 
 
         <section className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">

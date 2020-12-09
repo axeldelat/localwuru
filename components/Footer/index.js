@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import DashBoard from '../DashBoard';
+import DashBoard from '../Navbar/DashBoard';
 
 
 class Footer extends Component{
