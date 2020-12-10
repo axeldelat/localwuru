@@ -44,7 +44,7 @@ export default function NewExperiences() {
           description: description
         })
       })
-    } catch(err) { }
+    } catch(err) { } 
   }
 
   return (
