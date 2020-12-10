@@ -55,7 +55,7 @@ export default function Login() {
                 <div className="mb-4">
                   <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="username"
+                    htmlFor="username"
                   >
                     Email
                   </label>
@@ -74,7 +74,7 @@ export default function Login() {
                 <div className="mb-6">
                   <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    for="password"
+                    htmlFor="password"
                   >
                     Password  
                   </label>

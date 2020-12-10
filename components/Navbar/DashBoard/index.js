@@ -38,13 +38,14 @@ class DashBoard extends Component{
 
   render() {
     const activeDashboard = this.props.activeDashboard
+    const dashboardSwitch = this.props.dashboardSwitch
     return (
       <div className={activeDashboard ? {activeDashboard} : 'hidden'}>
-        <div onClick={() => this.setState({activeDashboard: false})} className="h-100 bg-gray-900 bg-opacity-75 inset-0 fixed flex flex-row-reverse">
-          <sidebar className="w-11/12 md:w-1/5 bg-purple-50	 h-full fixed p-6 overflow-auto">
+        <div onClick={() => dashboardSwitch()} className="h-100 bg-gray-900 bg-opacity-75 inset-0 fixed flex flex-row-reverse">
+          <div className="w-11/12 md:w-1/5 bg-purple-50	 h-full fixed p-6 overflow-auto">
             <div className="grid grid-cols-1">
               <div className="mb-6 col-span-1 p-6 flex flex-row items-center rounded bg-white">
-                <img class="inline object-cover w-16 h-16 mr-2 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
+                <img className="inline object-cover w-16 h-16 mr-2 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
                 <div>
                   <p  className="font-light">Nombre de Asjgf</p>
                   <p className="font-bold">🌊 Playa Presentation</p>
@@ -72,7 +73,7 @@ class DashBoard extends Component{
               </div>
             </div>
 
-          </sidebar>
+          </div>
         </div>
       </div>
         );

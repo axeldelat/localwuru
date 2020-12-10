@@ -102,19 +102,20 @@ export default function NewUser()  {
               <div className="mb-4">
                 <label
                     className="block text-gray-700 text-sm font-normal mb-2"
-                    htmlFor="birth"
+                    htmlFor="birthdate"
                   >
                     Fecha de Nacimiento
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     rows="5"
-                    name="bio"
+                    name="birthdate"
+                    type="date"
                     required
                     autoFocus
 
-                    value={bio}
-                    onChange={e => setBio(e.target.value)}
+                    value={birthdate}
+                    onChange={e => setBirthDate(e.target.value)}
                     />
                 </div>
               {/* <div className="mt-4">
@@ -158,7 +159,9 @@ export default function NewUser()  {
                 />
               </div>
               <div className="flex items-center justify-between">
-              <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">Enviar</button>
+              <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">
+                Enviar
+              </button>
               </div>
             </form>
           </div>

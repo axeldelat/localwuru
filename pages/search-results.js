@@ -1,10 +1,15 @@
+import Head from 'next/head'
+import styles from '../styles/sass/style.scss'
+
 import React,{useEffect,useState} from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import SearchBar from '../components/SearchBar'
-import styles from '../styles/sass/style.scss'
 import ExperienceCard from '../components/ExperienceCard'
 import Link from 'next/link'
+
+//Components
+import SearchBar from '../components/SearchBar'
+
 
 import { useRouter } from 'next/router'
 import { route } from 'next/dist/next-server/server/router'
@@ -25,8 +30,8 @@ export default function App(){
     const data = await response.json()
     let allExperiences = data.data.experiences
     if (search !== ''){
-      let filteredExperiences = allExperiences.filter(experience =>{
-        return experience.city === search
+      let filteredExperiences = allExperiences.filter(ExperienceCard =>{
+        return ExperienceCard.city === search
       })
       setExperiences(filteredExperiences)
     } else{
@@ -38,7 +43,10 @@ export default function App(){
 
     <div className="App">
       <Navbar/>
-      <form id="searchContainer" className="flex absolute">
+      <main className="w-screen mx-auto bg-gradient-to-b from-red-100 from-purple-100 p-10 md:p-20">
+        <SearchBar />
+      </main>
+      {/* <form id="searchContainer" className="flex absolute">
         <input className="searchBar h-10 rounded-sm" placeholder="Busca por ciudad" onChange={e => setSearch(e.target.value)}/>
         <img src="/images/Search.svg" className="relative right-7 cursor-pointer" onClick={getExperiences}/>
       </form>
@@ -51,7 +59,7 @@ export default function App(){
             {
               experiences.length == 0 ? <div>No se encontro un resultado</div> : ''
             }
-        </div>
+        </div> */}
       <Footer/>
     </div>
   )

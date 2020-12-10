@@ -12,17 +12,21 @@ class Navbar extends Component{
       activeView: "My Account",
       activeDashboard: false
     }
+
+    this.dashboardSwitch = this.dashboardSwitch.bind(this)
   }
 
   dashboardSwitch() {
     let toggle = !this.state.activeDashboard
-    this.setState(`activeDashboard: ${toggle}`)
+    console.log(toggle)
+    this.setState({activeDashboard: toggle})
+    console.log(this.state.activeDashboard)
   }
 
   render() {
     return (
       <>
-        <Nav dashboardSwitch={this.dashboardSwitch}/>
+        <Nav activeDashboard={this.state.activeDashboard} dashboardSwitch={this.dashboardSwitch}/>
         <DashBoard activeDashboard={this.state.activeDashboard} dashboardSwitch={this.dashboardSwitch}/>
       </>
     );
