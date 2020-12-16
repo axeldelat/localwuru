@@ -1,27 +1,26 @@
 import Head from 'next/head'
 import styles from '../styles/sass/style.scss'
-import { useState } from 'react'
-
-
-//Agregar handlers
+import React, { useReducer, useState } from 'react';
+import { Router, useRouter } from 'next/router'
 
 //Components
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 export default function NewUser()  {
-  const [name, setName] = useState('')
-  const [presentation, setPresentation] = useState('')
-  const [phone, setPhone] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [paypalme, setPaypalMe] = useState('')
-  const [gender, setGender] = useState('')
-  const [birthdate, setBirthDate] = useState('')
-  const [bio, setBio] = useState('')
+  const router = useRouter()
 
+  const formReducer = (state, event) => {
+    console.log("error", event.target)
+    return {
+      ...state,
+      [event.target.name]: event.target.value
+    }
+  }
 
-  const addUser = async (e) => {
+  const [formData, setFormData] = useReducer(formReducer, {});
+
+  const addUser = async (e, state) => {
     e.preventDefault()
     try {
       const res = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/signup', {
@@ -30,18 +29,24 @@ export default function NewUser()  {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          name: name,
-          presentation: presentation,
-          phone: phone,
-          email: email,
-          password: password,
-          paypalme: paypalme,
-          gender: gender,
-          birthdate: birthdate,
-          bio: bio
+          name: formData.name,
+          presentation: formData.presentation,
+          phone: formData.phone,
+          email: formData.email,
+          password: formData.password,
+          paypalme: formData.paypalme,
+          gender: formData.gender,
+          birthdate: formData.birthdate,
+          bio: formData.bio
         })
       })
-    } catch(err) { }
+      if(!res.ok) {
+        throw new Error('Fetch Failed')
+      }
+      router.push('/new-user-success')
+    } catch(err) {
+      console.error(err)
+    }
   }
 
   return (
@@ -58,106 +63,134 @@ export default function NewUser()  {
             <h1 className="text-5xl font-light mb-10">
               Registro de Usuario
             </h1>
-            <form className="h-full overflow-auto  w-full h-full flex flex-col">
-                <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    htmlFor="name"
-                  >
-                    Nombre Completo
-                  </label>
+            <form className="h-full overflow-auto  w-full h-full flex flex-col" onSubmit={addUser}>
+              <div className="mb-4">
+                <label>
+                  <p className="block text-gray-700 text-sm font-normal mb-2">Nombre Completo</p>
                   <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="name"
-                    type="text"
-                    required
-                    autoFocus
-                    placeholder=""
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="name"
+                  required
 
-                    value={name}
-                    onChange={e => setName(e.target.value)}
+                  onChange={setFormData}
                   />
-              </div>
-              <div className="mb-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    htmlFor="gender"
-                  >
-                    Género
-                  </label>
-                  <select
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="gender"
-                    name="gender"
-                    type="select"
-                    required
-                    autoFocus
-                  >
-                    <option disabled selected>Selecciona</option>
-                    <option value="male">Masculino</option>
-                    <option value="female">Female</option>
-                    <option value="other">Otro</option>
-                  </select>
-              </div>
-              <div className="mb-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    htmlFor="birthdate"
-                  >
-                    Fecha de Nacimiento
-                  </label>
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    rows="5"
-                    name="birthdate"
-                    type="date"
-                    required
-                    autoFocus
-
-                    value={birthdate}
-                    onChange={e => setBirthDate(e.target.value)}
-                    />
-                </div>
-              {/* <div className="mt-4">
-                <label
-                    className="block text-gray-700 text-sm font-normal mb-2"
-                    htmlFor="experience-duration"
-                  >
-                    Avatar
-                  </label>
-              </div>
-              <div className="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
-                <p className="hidden md:block mb-3 font-semibold text-gray-900 flex flex-wrap justify-center ">
-                  <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
-                </p>
-                <input type="file" multiple className="hidden" />
-                <button id="button" className="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
-                  Upload a file
-                </button>
-              </div> */}
-              <div className="flex items-center justify-between">
-                <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700"
-                type="submit"
-                onClick={addUser}>
-                Enviar
-                </button>
-              </div>
-              <div className="my-4">
-                <label
-                  className="block text-gray-700 text-sm font-normal mb-2"
-                  htmlFor="password"
-                >
-                  Password
                 </label>
-                <input
+              </div>
+              <div className="mb-4">
+                <label>
+                  <p className="block text-gray-700 text-sm font-normal mb-2">Email</p>
+                  <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="email"
+                  type="email"
+                  required
+
+                  onChange={setFormData}
+                  />
+                </label>
+              </div>
+              <div className="mb-4">
+                <label>
+                  <p className="block text-gray-700 text-sm font-normal mb-2">Password</p>
+                  <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   name="password"
                   type="password"
                   required
-                  autoFocus
-                  placeholder=""
-                />
+
+                  onChange={setFormData}
+                  />
+                </label>
               </div>
+              <div className="mb-4">
+                <label>
+                  <p className="block text-gray-700 text-sm font-normal mb-2">Presentación</p>
+                  <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="presentation"
+                  type="text"
+                  required
+
+                  onChange={setFormData}
+                  />
+                </label>
+              </div>
+              <div className="mb-4">
+                <label>
+                  <p className="block text-gray-700 text-sm font-normal mb-2">Teléfono Celular</p>
+                  <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="phone"
+                  type="number"
+                  required
+
+                  onChange={setFormData}
+                  />
+                </label>
+              </div>
+              <div className="mb-4">
+                <label>
+                  <p className="block text-gray-700 text-sm font-normal mb-2">Paypalme Link</p>
+                  <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="paypalme"
+                  type="text"
+                  required
+
+                  onChange={setFormData}
+                  />
+                </label>
+              </div>
+              <div className="mb-4">
+                <label>
+                  <p className="block text-gray-700 text-sm font-normal mb-2">Género</p>
+                </label>
+                <select
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="gender"
+                  name="gender"
+                  type="select"
+                  required
+
+                  onChange={setFormData}
+                >
+                  <option disabled selected>Selecciona</option>
+                  <option value="male">Masculino</option>
+                  <option value="female">Female</option>
+                  <option value="other">Otro</option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label>
+                  <p className="block text-gray-700 text-sm font-normal mb-2">Fecha de Nacimiento</p>
+                  <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="birthdate"
+                  type="date"
+                  required
+
+                  onChange={setFormData}
+                  />
+                </label>
+              </div>
+
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm font-normal mb-2"
+                >
+                  Bio
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  rows="10"
+                  name="bio"
+                  type="textarea"
+                  required
+
+                  onChange={setFormData}
+                  />
+              </div>
+
               <div className="flex items-center justify-between">
               <button className="px-4 py-2 my-4 rounded text-white inline-block shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700" type="submit">
                 Enviar
