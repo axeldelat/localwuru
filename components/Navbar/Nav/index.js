@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState,useEffect } from 'react'
 import Link from 'next/link'
 
 // Fontawesome
@@ -11,6 +11,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Nav({fixed, dashboardSwitch}) {
   console.log(dashboardSwitch)
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [token, setToken] = useState("") 
+  useEffect( () => {
+    let localStorageToken = localStorage.getItem('token')
+    setToken(localStorageToken)
+  })
+  //------------------------
+  function logOut(){
+    localStorage.removeItem('token')
+    setToken("")
+  }
+  //------------------------
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white">
@@ -42,6 +53,10 @@ export default function Nav({fixed, dashboardSwitch}) {
                   </a>
                 </Link>
               </li>
+              {/* The conditional Begins */}
+              {(token) 
+              ?
+              <>
               <li className="nav-item">
                   <a className="px-3 py-5 flex items-center text-sm font-light uppercase leading-snug text-gray-700 hover:opacity-75"
                   onClick={() => dashboardSwitch()}
@@ -50,12 +65,31 @@ export default function Nav({fixed, dashboardSwitch}) {
                   </a>
               </li>
               <li className="nav-item">
+                <Link href="/">
+                  <a className="items-center">
+                    <button className="h-10 px-5 m-2 text-purple-100 uppercase font-bold transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" onClick={logOut}>Cerrar sesión</button>
+                  </a>
+                </Link>
+              </li>
+              </>
+               :
+               <>
+              <li className="nav-item">
                 <Link href="/new-user">
                   <a className="items-center">
                     <button className="h-10 px-5 m-2 text-purple-100 uppercase font-bold transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800">Regístrate</button>
                   </a>
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link href="/login">
+                  <a className="items-center">
+                    <button className="h-10 px-5 m-2 text-purple-100 uppercase font-bold transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800">Iniciar Sesión</button>
+                  </a>
+                </Link>
+              </li>
+              </>
+               }
               <li className="nav-item flex content-center py-3 pl-2">
                   <img className="inline object-cover w-8 h-8 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
               </li>
