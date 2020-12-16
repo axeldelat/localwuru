@@ -11,13 +11,13 @@ export default function NewUserSucces() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Gracias por registrarte - LocalWuru</title>
+        <title>Gracias por Compartir  - LocalWuru</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
       </Head>
       <Navbar/>
-      <CallToAction />
+      Gracias Por Compartir tu Experiencia
       <Footer/>
     </div>
   )
