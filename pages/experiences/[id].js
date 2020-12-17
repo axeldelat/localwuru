@@ -28,7 +28,7 @@ useHook(() => {
 export default function experiencesSingle({results:experience}) {
   const router = useRouter();
   const { id } = router.query;
-  console.log(experience.data.experience)
+  console.log(experience.data)
 
   return (
     <div className={styles.container}>
@@ -131,7 +131,8 @@ export default function experiencesSingle({results:experience}) {
   )
 }
 export async function getServerSideProps(context){
-      const res = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}`)
+  // http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}
+      const res = await fetch(`http://localhost:8080/experiences/${context.params.id}`)
       console.log(res)
       const json = await res.json()
       const exps = json
