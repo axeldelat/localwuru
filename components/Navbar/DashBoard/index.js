@@ -3,8 +3,7 @@ import Link from 'next/link'
 
 //Components
 import MyAccount from './MyAccount'
-import MyBucketList from './MyBucketList'
-import Messages from './Messages'
+import MyExperiences from './MyExperiences'
 
 // Fontawesome
 import { ReactElement } from 'react'
@@ -28,18 +27,31 @@ class DashBoard extends Component{
   }
 
   activeView() {
-    if(this.state.activeView === "My Account"){
-      return <MyAccount />
-    } if(this.state.activeView === "My Bucket List"){
-      return <MyBucketList />
-    } if(this.state.activeView === "Messages"){
-      return <Messages />
+    if(this.state.activeView === "My Experiences"){
+      return <MyExperiences />
     }
     else {
-      return "Noma"
+      return <MyAccount />
     }
   }
 
+  async componentDidMount(){
+    const token = localStorage.getItem('token')
+    const response = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/profile',{
+      method:'POST',
+      headers:{
+        authorization: token,
+        'content-type':"application/json"
+      }
+    })
+    const responseJSON = await response.json()
+
+    console.log(this.state)
+    const profile = this.setState( responseJSON.profile )
+    console.log(this.state)
+
+    console.log(responseJSON)
+  }
 
   render() {
     const activeDashboard = this.props.activeDashboard
@@ -47,14 +59,14 @@ class DashBoard extends Component{
     return (
       <div className={activeDashboard ? {activeDashboard} : 'hidden'}>
         <div className="h-100 bg-gray-900 bg-opacity-75 inset-0 fixed flex flex-row-reverse">
-          <div className="w-11/12 md:w-1/5 bg-purple-50	 h-full fixed p-6 overflow-auto">
+          <div className="w-9/12 md:w-2/5 bg-purple-50	 h-full fixed p-6 overflow-auto">
             <FontAwesomeIcon icon={faWindowClose} color="white" className="h-4 fill-current text-purple-600 absolute top-2 left-2" onClick={() => dashboardSwitch()}/>
             <div className="grid grid-cols-1">
               <div className="mb-6 col-span-1 p-6 flex flex-row items-center rounded bg-white">
                 <img className="inline object-cover w-16 h-16 mr-2 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
                 <div>
-                  <p  className="font-light">Nombre de Asjgf</p>
-                  <p className="font-bold">🌊 Playa Presentation</p>
+                  <p  className="font-light">{this.state.name}</p>
+                  <p className="font-bold">{this.state.presentation}</p>
                 </div>
               </div>
               <div className="col-span-1 flex justify-between mb-6 ">
@@ -72,7 +84,7 @@ class DashBoard extends Component{
                 </button> */}
               </div>
 
-              <div className="col-span-1 p-6 flex flex-row items-center rounded bg-white">
+              <div className="col-span-1 p-6  items-center rounded bg-white">
 
                 {this.activeView()}
 
