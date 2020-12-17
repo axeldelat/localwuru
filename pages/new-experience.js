@@ -2,14 +2,14 @@ import Head from 'next/head'
 import styles from '../styles/sass/style.scss'
 import React, { useReducer, useState } from 'react';
 import { Router, useRouter } from 'next/router'
-
+import protectRoute from '../AuthContext/protectRoute'
 
 
 //Components
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
-export default function NewExperiences() {
+function NewExperiences() {
   const router = useRouter()
 
   const formReducer = (state, event) => {
@@ -19,16 +19,18 @@ export default function NewExperiences() {
       [event.target.name]: event.target.value
     }
   }
-
+// http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/
   const [formData, setFormData] = useReducer(formReducer, {});
 
   const addExperience = async (e, state) => {
     e.preventDefault()
     try {
       console.log(formData)
-      const res = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/', {
+      const token = localStorage.getItem('token')
+      const res = await fetch('http://localhost:8080/experiences', {
         method: 'post',
         headers: {
+          authorization: token,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -296,3 +298,4 @@ export default function NewExperiences() {
     </div>
   )
 }
+export default protectRoute(NewExperiences)

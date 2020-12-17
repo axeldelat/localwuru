@@ -43,9 +43,9 @@ export default function Home() {
           backgroundRepeat: 'no-repeat'
         }}>
           <h1 className=" self-end mb-4 col-span-1 md:col-span-12  text-white text-center text-5xl font-extralight">Experiencias increíbles,<br />contadas por personas únicas</h1>
-            <form className="col-span-1 md:col-span-9 md:col-start-3 row-start-2 ">
+            <form className="col-span-1 md:col-span-9 md:col-start-3 row-start-2">
               <input className="w-full text-center h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" type="text" placeholder="Buscar por Ciudad" onChange={e => setSearch(e.target.value)}/>
-              <img src="/images/Search.svg" className="relative right-7 cursor-pointer" onClick={getExperiences}/>
+              <img src="/images/Search.svg" className="relative right-7 cursor-pointer bottom-11 left-4" onClick={getExperiences}/>
             </form>
         </section>
         <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 md:p-32">

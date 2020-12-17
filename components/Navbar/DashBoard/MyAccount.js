@@ -3,7 +3,18 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 
 class MyAccount extends Component{
-
+  async componentDidMount(){
+    const token = localStorage.getItem('token')
+    const response = await fetch('http://localhost:8080/auth/profile',{
+      method:'POST',
+      headers:{
+        authorization: token,
+        'content-type':"application/json"
+      }
+    })
+    const responseJSON = await response.json()
+    console.log(responseJSON)
+  }
   render() {
     return (
             <form>

@@ -26,6 +26,7 @@ export default function Login() {
       response.json().then(result=>{
         console.log("result ",result)
         if (result.success === true) {
+          console.log(result)
             localStorage.setItem('token', result.data.token);
             router.push("/")
         }else{
@@ -76,7 +77,7 @@ export default function Login() {
                     className="block text-gray-700 text-sm font-normal mb-2"
                     htmlFor="password"
                   >
-                    Password  
+                    Password
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"

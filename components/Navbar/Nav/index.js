@@ -5,21 +5,24 @@ import Link from 'next/link'
 import { ReactElement } from 'react'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import useAuth from '../../../AuthContext'
 
 
 export default function Nav({fixed, dashboardSwitch}) {
   console.log(dashboardSwitch)
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const [token, setToken] = useState("") 
-  useEffect( () => {
-    let localStorageToken = localStorage.getItem('token')
-    setToken(localStorageToken)
-  })
+  // const [token, setToken] = useState("")
+  const data = useAuth()
+  console.log(data)
+  // useEffect( () => {
+  //   let localStorageToken = localStorage.getItem('token')
+    // setToken(localStorageToken)
+  // })
   //------------------------
   function logOut(){
-    localStorage.removeItem('token')
-    setToken("")
+    data.logOut()
+    // localStorage.removeItem('token')
+    // setToken("")
   }
   //------------------------
   return (
@@ -54,7 +57,7 @@ export default function Nav({fixed, dashboardSwitch}) {
                 </Link>
               </li>
               {/* The conditional Begins */}
-              {(token) 
+              {(data.isAuthenticated)
               ?
               <>
               <li className="nav-item">
