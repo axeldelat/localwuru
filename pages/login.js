@@ -26,6 +26,7 @@ export default function Login() {
       response.json().then(result=>{
         console.log("result ",result)
         if (result.success === true) {
+          console.log(result)
             localStorage.setItem('token', result.data.token);
             router.push("/")
         }else{
