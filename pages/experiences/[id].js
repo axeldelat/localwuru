@@ -20,7 +20,7 @@ useHook(() => {
 
 // useEffect(() => {
 //   if (id) {
-    
+
 //   }
 // }, [id]);
 */
@@ -28,7 +28,7 @@ useHook(() => {
 export default function experiencesSingle({results:experience}) {
   const router = useRouter();
   const { id } = router.query;
-  console.log(experience)
+  console.log(experience.data.experience)
 
   return (
     <div className={styles.container}>
@@ -42,9 +42,9 @@ export default function experiencesSingle({results:experience}) {
         <section className="text-left h-auto  flex flex-col  col-span-1 md:col-span-7 md:col-start-2">
           <div className="bg-white p-0 rounded-lg text-black  my-3 shadow rounded-sm m-3">
 
-            <div className="h-5/6	col-span-1 md:col-span-2 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+            <div className="h-1/6	col-span-1 md:col-span-2 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
             style={{
-              backgroundImage: "url(" + "/images/cdmx.jpg" + ")",
+              backgroundImage: `url(${experience.data.experience.imgUrl})`,
               backgroundPosition: 'center',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat'
@@ -53,19 +53,19 @@ export default function experiencesSingle({results:experience}) {
 {/* //Error en Vista Movil */}
             <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4">
               <div className="col-span-2 md:col-span-3 p-6">
-                <h1 className="text-sm md:text-4xl">{experience.data.experience.nameExperience}</h1>
+                <h1 className="text-sm md:text-4xl">{experience.data.experience.title}</h1>
                 <p>{experience.data.experience.city}, {experience.data.experience.state}. {experience.data.experience.country}</p>
-                <p className="text-sm"><span>🗽 Monumentos</span><span>🌊 Playa</span><span>🍸 Mixology</span></p>
+                {/* <p className="text-sm"><span>🗽 Monumentos</span><span>🌊 Playa</span><span>🍸 Mixology</span></p> */}
               </div>
               <div className="col-span-1 p-6">
-              <button className="bg-purple-600 hover:bg-purple-700 font-bold py-2 px-4 rounded inline-flex items-center">
+              {/* <button className="bg-purple-600 hover:bg-purple-700 font-bold py-2 px-4 rounded inline-flex items-center">
                 <span className="text-white">
                 Agregar a BucketList</span>
-              </button>
+              </button> */}
               </div>
               <div className="col-span-1 p-6">
                 <p className="text-base font-bold">Tipo de Experiencia</p>
-                <p>{experience.data.experience.typeOfExperience}</p>
+                <p>{experience.data.experience.type}</p>
               </div>
               <div className="col-span-1 p-6">
                 <p className="text-base font-bold">Duración</p>
@@ -73,22 +73,19 @@ export default function experiencesSingle({results:experience}) {
               </div>
               <div className="col-span-1 p-6">
                 <p className="text-base font-bold">Temporada</p>
-                <p>{experience.data.experience.availableSeason}</p>
+                <p>{experience.data.experience.season}</p>
               </div>
               <div className="col-span-1 p-6">
                 <p className="text-base font-bold">Presupuesto</p>
-                <p>{experience.data.experience.suggestedBudget}</p>
+                <p>{experience.data.experience.budget}</p>
               </div>
               <div className="col-span-4 p-6">
                 <p className="text-base font-bold">Recomendaciones</p>
-                <p>{experience.data.experience.previousRecommendations}</p>
+                <p>{experience.data.experience.recommendations}</p>
               </div>
               <div className="col-span-4 p-6">
                 <p className="text-base font-bold">La experiencia</p>
-                <p className="text-justify p-2">{experience.data.experience.experienceDescription}</p>
-                <p className="text-justify p-2">{experience.data.experience.experienceDescription}</p>
-                <p className="text-justify p-2">{experience.data.experience.experienceDescription}</p>
-                <p className="text-justify p-2">{experience.data.experience.experienceDescription}</p>
+                <p className="text-justify p-2">{experience.data.experience.description}</p>
               </div>
             </div>
           </div>

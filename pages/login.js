@@ -46,7 +46,7 @@ export default function Login() {
       <main className="w-screen mx-auto bg-gradient-to-b from-red-100 from-purple-100 h-auto md:h-screen p-10 flex justify-center">
         <div className="flex items-center justify-center">
             <div className="w-full max-w-md">
-               <form className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4" onSubmit={logIn}> {/*onSubmit*/}
+              <form className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4" onSubmit={logIn}> {/*onSubmit*/}
                 <div
                   className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4"
                 >
@@ -76,7 +76,7 @@ export default function Login() {
                     className="block text-gray-700 text-sm font-normal mb-2"
                     htmlFor="password"
                   >
-                    Password  
+                    Password
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"

@@ -11,6 +11,7 @@ import Navbar from '../components/Navbar'
 
 export default function NewExperiences() {
   const router = useRouter()
+  const [isLoading, setIsLoading] = useState(true);
 
   const formReducer = (state, event) => {
     console.log("error", event.target)
@@ -23,6 +24,7 @@ export default function NewExperiences() {
   const [formData, setFormData] = useReducer(formReducer, {});
 
   const addExperience = async (e, state) => {
+    // const [postId, setPostId] = useState(1)
     e.preventDefault()
     try {
       console.log(formData)
@@ -48,6 +50,12 @@ export default function NewExperiences() {
       if(!res.ok) {
         throw new Error('Fetch Failed')
       }
+      // fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/')
+      // .then(response => response.json())
+      // .then(data => {
+      //   let recentItem = data.data.experiences.length - 1;
+      //   console.log(data.data.experiences[recentItem]._id)
+      //   });
       router.push('/new-experience-success')
     } catch(err) {
       console.error(err)

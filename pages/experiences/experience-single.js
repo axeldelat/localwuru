@@ -20,7 +20,7 @@ export default function experiencesSingle() {
         <section className="text-left h-auto  flex flex-col  col-span-1 md:col-span-7 md:col-start-2">
           <div className="bg-white p-0 rounded-lg text-black  my-3 shadow rounded-sm m-3">
 
-            <div className="h-5/6	col-span-1 md:col-span-2 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
+            <div className="h-1/6	col-span-1 md:col-span-2 bg-white py-32 rounded-lg text-black  my-3 shadow-md rounded-xl m-3 box-content "
             style={{
               backgroundImage: "url(" + "/images/cdmx.jpg" + ")",
               backgroundPosition: 'center',
@@ -33,13 +33,13 @@ export default function experiencesSingle() {
               <div className="col-span-2 md:col-span-3 p-6">
                 <h1 className="text-sm md:text-4xl">Nombre de Experiencia en Cuyabeno</h1>
                 <p>Ciudad, Estado. País</p>
-                <p className="text-sm"><span>🗽 Monumentos</span><span>🌊 Playa</span><span>🍸 Mixology</span></p>
+                {/* <p className="text-sm"><span>🗽 Monumentos</span><span>🌊 Playa</span><span>🍸 Mixology</span></p> */}
               </div>
               <div className="col-span-1 p-6">
-              <button class="bg-purple-600 hover:bg-purple-700 font-bold py-2 px-4 rounded inline-flex items-center">
+              {/* <button class="bg-purple-600 hover:bg-purple-700 font-bold py-2 px-4 rounded inline-flex items-center">
                 <span className="text-white">
                 Agregar a BucketList</span>
-              </button>
+              </button> */}
               </div>
               <div className="col-span-1 p-6">
                 <p className="text-base font-bold">Tipo de Experiencia</p>
