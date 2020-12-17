@@ -65,7 +65,7 @@ export default function Home() {
           <div className="col-span-1 md:col-span-9">
             <h1 className="text-center text-5xl mb-5">Ciudades Disponibles</h1>
           </div>
-          <Link href="/?Ciudaddeme">
+          <Link href="/search-results?keyword=Ciudad+de+México">
             <a className="col-span-1 md:col-span-3">
               <div className="h-64 bg-white rounded-lg text-black shadow-md rounded-xl box-content flex justify-center items-center"
                 style={{
@@ -78,7 +78,7 @@ export default function Home() {
               </div>
             </a>
           </Link>
-          <Link href="/?Monterrey">
+          <Link href="/search-results?keyword=Monterrey">
             <a className="col-span-1 md:col-span-3">
               <div className="h-64 bg-white rounded-lg text-black shadow-md rounded-xl box-content flex justify-center items-center"
               style={{
@@ -91,7 +91,7 @@ export default function Home() {
               </div>
             </a>
           </Link>
-          <Link href="/?Playadelcarmen">
+          <Link href="/search-results?keyword=Playa+del+Carmen">
             <a className="col-span-1 md:col-span-3">
               <div className="h-64 bg-white rounded-lg text-black  shadow-md rounded-xl box-content flex justify-center items-center"
               style={{
