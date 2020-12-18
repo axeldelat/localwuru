@@ -6,17 +6,17 @@ function Accordion(){
     const [faqs,setFaqs] = useState([
             {
             question:"¿Tiene algún costo?",
-            answer:"This is the answer1",
+            answer:"Localwuru es completamente GRATIS, la intención de la plataforma es ser un espacio para compartir experiencias con otros viajeros",
             open:true
             },
             {
             question:"¿Es seguro?",
-            answer:"This is the answer2",
+            answer:"Claro que es seguro, nuestra comunidad trata en todo momento de compartir experiencias que sean extraordinarias, siempre cuidando la integridad propia y de los otros miembros",
             open:false
             },
             {
             question:"¿Cómo puedo hacer donaciones?",
-            answer:"This is the answer3",
+            answer:"Buena pregunta, en todas las experiencias podrás ver quien es el autor y hacer un donativo directo a la cuenta del mismo. LocalWuru no rebice una comisión por esta transacción, queremos incentivar el apoyo entre viajeros.",
             open:false
             }
         ]);

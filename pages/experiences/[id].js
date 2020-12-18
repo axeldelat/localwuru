@@ -2,6 +2,8 @@ import Head from 'next/head'
 import styles from '../../styles/sass/style.scss'
 import { useRouter } from 'next/router'
 import {useEffect} from 'react'
+import Link from 'next/link'
+
 
 //Components
 import Navbar from '../../components/Navbar'
@@ -73,32 +75,29 @@ export default function experiencesSingle({results:experience}) {
           <div className="bg-white p-0 rounded-lg text-black  my-3 shadow rounded-sm">
             <div className="grid grid-cols-1">
               <div className="col-span-1 p-6 flex flex-col items-center">
-                <img className="inline object-cover w-16 h-16 mr-2 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&csName=tinysrgb&h=650&w=940" alt="Profile image"/>
-                <p className="font-light">Nombre de Asjgf</p>
-                <h1 className="font-bold">🌊 Playa Presentation</h1>
-                <p className="text-justify mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac enim malesuada, tempor nisl id, malesuada purus. Donec imperdiet urna in mi venenatis, vitae fringilla dui ornare.</p>
-                <button className="bg-purple-600 hover:bg-purple-700 font-bold py-2 px-4 rounded inline-flex items-center mt-4">
-                <span className="text-white">
-                Donar un Café</span>
-              </button>
-              </div>
-            </div>
-          </div>
-
-
-          <h2 className="mt-4 font-light text-2xl">Experiencia Relacionada</h2>
-          <div className="bg-white p-0 rounded-lg text-black  my-3 shadow rounded-sm">
-
-            <div className="grid grid-cols-1">
-              <div className="col-span-1 p-6 flex flex-col items-center">
-                <img className="inline object-cover w-16 h-16 mr-2 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
-                <p className="font-light">Nombre de Asjgf</p>
-                <h1 className="font-bold">🌊 Playa Presentation</h1>
-                <p className="text-justify mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac enim malesuada, tempor nisl id, malesuada purus. Donec imperdiet urna in mi venenatis, vitae fringilla dui ornare.</p>
-                <button className="bg-purple-600 hover:bg-purple-700 font-bold py-2 px-4 rounded inline-flex items-center">
-                <span className="text-white">
-                Donar un Café</span>
-              </button>
+                {/* Conditional Rendering for male or female */}
+                {experience.data.author.gender === "male" &&
+                <img className="inline object-cover w-16 h-16 rounded-full" src="/images/mavatar.png" alt="Profile image"/>
+                }
+                {experience.data.author.gender === "female" &&
+                <img className="inline object-cover w-16 h-16 rounded-full" src="/images/favatar.png" alt="Profile image"/>
+                }
+                <p className="font-light">{experience.data.author.name}</p>
+                <h1 className="font-bold">{experience.data.author.presentation}</h1>
+                <p className="text-justify mt-4">{experience.data.author.bio}</p>
+                {/* Conditional Renderinf IF user has paypalme */}
+                {
+                  experience.data.author.paypalme ?
+                  <Link href={`http://${experience.data.author.paypalme}`} passHref={true}>
+                  <a target="_blank">
+                    <button className="bg-purple-600 hover:bg-purple-700 font-bold py-2 px-4 rounded inline-flex items-center mt-4 cursor-pointer">
+                    <span className="text-white">
+                    Donar un Café</span>
+                    </button>
+                  </a>
+                </Link> :
+                <span></span>
+                }
               </div>
             </div>
           </div>

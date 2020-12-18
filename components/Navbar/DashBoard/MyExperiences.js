@@ -38,7 +38,7 @@ class MyExperiences extends Component{
     return (
       <>
         {this.state.experiences.map(experience=>(
-          <div className="col-span-3">
+          <div className="mb-8">
             <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
               <a>
                 <ExperienceCard experience={experience} />
