@@ -93,9 +93,6 @@ export default function Nav({fixed, dashboardSwitch}) {
               </li>
               </>
                }
-              <li className="nav-item flex content-center py-3 pl-2">
-                  <img className="inline object-cover w-8 h-8 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
-              </li>
             </ul>
           </div>
         </div>

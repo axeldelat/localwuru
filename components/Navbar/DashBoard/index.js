@@ -63,7 +63,13 @@ class DashBoard extends Component{
             <FontAwesomeIcon icon={faWindowClose} color="white" className="h-4 fill-current text-purple-600 absolute top-2 left-2" onClick={() => dashboardSwitch()}/>
             <div className="grid grid-cols-1">
               <div className="mb-6 col-span-1 p-6 flex flex-row items-center rounded bg-white">
-                <img className="inline object-cover w-16 h-16 mr-2 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
+                {/* Conditional Rendering for male or female */}
+                {this.state.gender === "male" &&
+                <img className="inline object-cover w-16 h-16 mr-2 rounded-full" src="/images/mavatar.png" alt="Profile image"/>
+                }
+                {this.state.gender === "female" &&
+                <img className="inline object-cover w-16 h-16 mr-2 rounded-full" src="/images/favatar.png" alt="Profile image"/>
+                }
                 <div>
                   <p  className="font-light">{this.state.name}</p>
                   <p className="font-bold">{this.state.presentation}</p>
@@ -88,6 +94,14 @@ class DashBoard extends Component{
 
                 {this.activeView()}
 
+              </div>
+              <div className="col-span-1 p-6 my-6 items-center rounded bg-white flex flex-col">
+                <p className="font-extrabold text-2xl text-center mb-10">Comparte tu Experiencia Local</p>
+                  <Link href="/new-experience">
+                    <button className="text-2xl bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded">
+                      Publicar
+                    </button>
+                  </Link>
               </div>
             </div>
 
