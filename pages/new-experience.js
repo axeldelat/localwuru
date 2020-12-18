@@ -52,12 +52,6 @@ function NewExperiences() {
       if(!res.ok) {
         throw new Error('Fetch Failed')
       }
-      // fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/')
-      // .then(response => response.json())
-      // .then(data => {
-      //   let recentItem = data.data.experiences.length - 1;
-      //   console.log(data.data.experiences[recentItem]._id)
-      //   });
       router.push('/new-experience-success')
     } catch(err) {
       console.error(err)
