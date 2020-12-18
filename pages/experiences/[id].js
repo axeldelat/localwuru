@@ -126,7 +126,7 @@ export default function experiencesSingle({results:experience}) {
   )
 }
 export async function getServerSideProps(context){
-      const res = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}`)
+      const res = await fetch(`https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}`)
       console.log(res)
       const json = await res.json()
       const exps = json

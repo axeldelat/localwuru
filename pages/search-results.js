@@ -26,7 +26,7 @@ export default function App(){
   //setSearch(router.query)
   const getExperiences = async ()=>{
     console.log("search",search)
-    const response = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences`)
+    const response = await fetch(`https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences`)
     const data = await response.json()
     let allExperiences = data.data.experiences
     if (search !== ''){

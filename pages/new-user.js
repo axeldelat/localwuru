@@ -23,7 +23,7 @@ export default function NewUser()  {
   const addUser = async (e, state) => {
     e.preventDefault()
     try {
-      const res = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/signup', {
+      const res = await fetch('https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/signup', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json'

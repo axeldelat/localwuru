@@ -13,7 +13,7 @@ export default function Login() {
   function logIn(e){
     e.preventDefault()
     console.log(email,password)
-    fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/login',{
+    fetch('https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/login',{
       method:"POST",
       body:JSON.stringify({
         email:email,
