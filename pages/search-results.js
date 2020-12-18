@@ -46,20 +46,7 @@ export default function App(){
       <main className="w-screen mx-auto bg-gradient-to-b from-red-100 from-purple-100 p-10 md:p-20">
         <SearchBar />
       </main>
-      {/* <form id="searchContainer" className="flex absolute">
-        <input className="searchBar h-10 rounded-sm" placeholder="Busca por ciudad" onChange={e => setSearch(e.target.value)}/>
-        <img src="/images/Search.svg" className="relative right-7 cursor-pointer" onClick={getExperiences}/>
-      </form>
-        <div className="container mx-auto grid grid-cols-1  gap-4 p-10 md:p-32">
-            {experiences.map(experience=>(
-              <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
-                <ExperienceCard nameExperience={experience.nameExperience} city={experience.city}/>
-              </Link>
-            ))}
-            {
-              experiences.length == 0 ? <div>No se encontro un resultado</div> : ''
-            }
-        </div> */}
+
       <Footer/>
     </div>
   )

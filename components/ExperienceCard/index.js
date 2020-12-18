@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 
 const ExperienceCard = React.forwardRef(({ onClick, href,experience}, ref) => {
-  console.log(experience)
+  console.log( "experience ->" ,experience)
   return (
     <>
       <div className="overflow-hidden rounded-lg shadow-lg" onClick={onClick} ref={ref}>
