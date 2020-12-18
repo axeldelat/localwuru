@@ -41,7 +41,7 @@ class MyExperiences extends Component{
           <div className="col-span-3">
             <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
               <a>
-                <ExperienceCard title={experience.title} city={experience.city} state={experience.state} country={experience.country} description={experience.description} imgUrl={experience.imgUrl} />
+                <ExperienceCard experience={experience} />
               </a>
             </Link>
           </div>

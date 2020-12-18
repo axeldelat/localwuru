@@ -71,15 +71,6 @@ export default function Home() {
                 </Link>
               </div>
             ))}
-          {/* <div className="col-span-3 ">
-            <ExperienceCard />
-          </div>
-          <div className="col-span-3">
-            <ExperienceCard />
-          </div>
-          <div className="col-span-3 ">
-            <ExperienceCard />
-          </div> */}
         </section>
 
         <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 p-10 md:p-32">
