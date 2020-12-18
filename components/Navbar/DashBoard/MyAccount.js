@@ -10,7 +10,7 @@ class MyAccount extends Component{
 
   async componentDidMount(){
     const token = localStorage.getItem('token')
-    const response = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/profile',{
+    const response = await fetch('https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/profile',{
       method:'POST',
       headers:{
         authorization: token,

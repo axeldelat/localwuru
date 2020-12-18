@@ -109,7 +109,10 @@ export default function experiencesSingle({results:experience}) {
   )
 }
 export async function getServerSideProps(context){
+<<<<<<< HEAD
   // http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}
+=======
+>>>>>>> 468fbc38f67e7a3a5c6f916ece2a096281424942
       const res = await fetch(`https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}`)
       console.log(res)
       const json = await res.json()

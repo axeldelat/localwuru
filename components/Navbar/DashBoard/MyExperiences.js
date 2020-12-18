@@ -13,7 +13,7 @@ class MyExperiences extends Component{
 
   async componentDidMount(){
     const token = localStorage.getItem('token')
-    const response = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/profile',{
+    const response = await fetch('https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/auth/profile',{
       method:'POST',
       headers:{
         authorization: token,
@@ -24,7 +24,7 @@ class MyExperiences extends Component{
 
     const profile = this.setState( {profile: responseJSON.profile} )
 
-    const experiences = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/author/${this.state.profile._id}`,{
+    const experiences = await fetch(`https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/author/${this.state.profile._id}`,{
       method:'GET',
       headers:{
         'content-type':"application/json"

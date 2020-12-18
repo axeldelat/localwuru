@@ -29,7 +29,7 @@ function NewExperiences() {
     try {
       console.log(formData)
       const token = localStorage.getItem('token')
-      const res = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/', {
+      const res = await fetch('https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/', {
         method: 'post',
         headers: {
           authorization: token,
