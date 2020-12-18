@@ -20,7 +20,7 @@ function NewExperiences() {
       [event.target.name]: event.target.value
     }
   }
-// http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/
+
   const [formData, setFormData] = useReducer(formReducer, {});
 
   const addExperience = async (e, state) => {
@@ -29,7 +29,7 @@ function NewExperiences() {
     try {
       console.log(formData)
       const token = localStorage.getItem('token')
-      const res = await fetch('http://localhost:8080/experiences', {
+      const res = await fetch('http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/', {
         method: 'post',
         headers: {
           authorization: token,

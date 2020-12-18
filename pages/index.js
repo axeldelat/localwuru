@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/sass/style.scss'
 
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import Router from 'next/router'
 import Link from 'next/link'
 
@@ -17,6 +17,18 @@ import ExperienceCard from '../components/ExperienceCard'
 
 
 export default function Home() {
+  const [recentExperiences,setrecentExperiences] = useState([])
+  useEffect(()=>{
+    getRecentExperiences()
+  },[])
+  //setSearch(router.query)
+  const getRecentExperiences = async ()=>{
+    const response = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences`)
+    const data = await response.json()
+    let allRecentExperiences = data.data.experiences.slice(-3)
+    console.log("un paso más cerca !" ,allRecentExperiences)
+    setrecentExperiences(allRecentExperiences)
+  }
   const [search, setSearch] = useState("")
   const getExperiences = ()=>{
     Router.push({
@@ -50,7 +62,16 @@ export default function Home() {
         </section>
         <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 md:p-32">
           <div className="col-span-1 md:col-span-9"><h1 className="text-center text-5xl mb-5">Experiencias Recientes</h1></div>
-          <div className="col-span-3 ">
+        {recentExperiences.map(experience=>(
+              <div className="col-span-3">
+                <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
+                  <a>
+                    <ExperienceCard experience={experience}/>
+                  </a>
+                </Link>
+              </div>
+            ))}
+          {/* <div className="col-span-3 ">
             <ExperienceCard />
           </div>
           <div className="col-span-3">
@@ -58,7 +79,7 @@ export default function Home() {
           </div>
           <div className="col-span-3 ">
             <ExperienceCard />
-          </div>
+          </div> */}
         </section>
 
         <section className="container mx-auto grid grid-cols-1 md:grid-cols-9 gap-4 p-10 md:p-32">

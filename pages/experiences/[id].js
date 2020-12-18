@@ -7,23 +7,6 @@ import {useEffect} from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
-/*
-
-const router = useRouter();
-const { id } = router.query;
-
-useHook(() => {
-  if (id) {
-    // call api
-  }
-}, [id]);
-
-// useEffect(() => {
-//   if (id) {
-
-//   }
-// }, [id]);
-*/
 
 export default function experiencesSingle({results:experience}) {
   const router = useRouter();
@@ -132,7 +115,7 @@ export default function experiencesSingle({results:experience}) {
 }
 export async function getServerSideProps(context){
   // http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}
-      const res = await fetch(`http://localhost:8080/experiences/${context.params.id}`)
+      const res = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}`)
       console.log(res)
       const json = await res.json()
       const exps = json
