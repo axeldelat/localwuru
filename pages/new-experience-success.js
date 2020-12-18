@@ -28,9 +28,9 @@ export default function NewUserSucces() {
             className="object-center my-10"
             />
           <p className="font-extrabold text-4xl text-center mb-10">Gracias por compartir tu experiencia</p>
-          <Link href="/new-experience">
+          <Link href="/">
             <button className="text-2xl bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded mb-10">
-              Publicar
+              Volver
             </button>
           </Link>
         </div>

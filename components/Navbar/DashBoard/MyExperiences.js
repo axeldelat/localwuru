@@ -1,11 +1,14 @@
 
 import React, { Component } from 'react'
 import Link from 'next/link'
+import ExperienceCard from '../../ExperienceCard'
 
 class MyExperiences extends Component{
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      experiences: []
+    };
   }
 
   async componentDidMount(){
@@ -19,16 +22,30 @@ class MyExperiences extends Component{
     })
     const responseJSON = await response.json()
 
-    console.log(this.state)
-    const profile = this.setState( responseJSON.profile )
-    console.log(this.state)
+    const profile = this.setState( {profile: responseJSON.profile} )
 
-    console.log(responseJSON)
+    const experiences = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/author/${this.state.profile._id}`,{
+      method:'GET',
+      headers:{
+        'content-type':"application/json"
+      }
+    })
+    const experiencesJSON = await experiences.json()
+
+    const exp = this.setState( {experiences: experiencesJSON.data.experience} )
   }
   render() {
     return (
       <>
-        hola
+        {this.state.experiences.map(experience=>(
+          <div className="col-span-3">
+            <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
+              <a>
+                <ExperienceCard title={experience.title} city={experience.city} state={experience.state} country={experience.country} description={experience.description} imgUrl={experience.imgUrl} />
+              </a>
+            </Link>
+          </div>
+        ))}
       </>
 
         );

@@ -50,7 +50,6 @@ export default function experiencesSingle({results:experience}) {
               backgroundRepeat: 'no-repeat'
             }}>
             </div>
-{/* //Error en Vista Movil */}
             <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4">
               <div className="col-span-2 md:col-span-3 p-6">
                 <h1 className="text-sm md:text-4xl">{experience.data.experience.title}</h1>
@@ -58,10 +57,6 @@ export default function experiencesSingle({results:experience}) {
                 {/* <p className="text-sm"><span>🗽 Monumentos</span><span>🌊 Playa</span><span>🍸 Mixology</span></p> */}
               </div>
               <div className="col-span-1 p-6">
-              {/* <button className="bg-purple-600 hover:bg-purple-700 font-bold py-2 px-4 rounded inline-flex items-center">
-                <span className="text-white">
-                Agregar a BucketList</span>
-              </button> */}
               </div>
               <div className="col-span-1 p-6">
                 <p className="text-base font-bold">Tipo de Experiencia</p>
@@ -131,8 +126,7 @@ export default function experiencesSingle({results:experience}) {
   )
 }
 export async function getServerSideProps(context){
-  // http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}
-      const res = await fetch(`http://localhost:8080/experiences/${context.params.id}`)
+      const res = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences/${context.params.id}`)
       console.log(res)
       const json = await res.json()
       const exps = json

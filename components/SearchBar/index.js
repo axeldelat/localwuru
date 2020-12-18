@@ -60,7 +60,7 @@ export default function SearchBar(){
               <div className="col-span-3">
                 <Link key={experience._id} href={`/experiences/${encodeURIComponent(experience._id)}`} passHref>
                   <a>
-                    <ExperienceCard nameExperience={experience.nameExperience} city={experience.city}/>
+                    <ExperienceCard title={experience.title} city={experience.city} state={experience.state} country={experience.country} description={experience.description} imgUrl={experience.imgUrl} />
                   </a>
                 </Link>
               </div>
