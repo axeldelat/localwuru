@@ -23,7 +23,7 @@ export default function Home() {
   },[])
   //setSearch(router.query)
   const getRecentExperiences = async ()=>{
-    const response = await fetch(`http://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences`)
+    const response = await fetch(`https://belocalwuru-turbulent-hippopotamus-vp.mybluemix.net/experiences`)
     const data = await response.json()
     let allRecentExperiences = data.data.experiences.slice(-3)
     console.log("un paso más cerca !" ,allRecentExperiences)
