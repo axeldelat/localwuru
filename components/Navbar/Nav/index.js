@@ -75,8 +75,8 @@ export default function Nav({fixed, dashboardSwitch}) {
                 </Link>
               </li>
               </>
-               :
-               <>
+              :
+              <>
               <li className="nav-item">
                 <Link href="/new-user">
                   <a className="items-center">
@@ -92,7 +92,7 @@ export default function Nav({fixed, dashboardSwitch}) {
                 </Link>
               </li>
               </>
-               }
+              }
             </ul>
           </div>
         </div>

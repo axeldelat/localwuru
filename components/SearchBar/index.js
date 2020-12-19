@@ -39,7 +39,7 @@ export default function SearchBar(){
     {/* //On submit ??*/}
       <form className="grid grid-cols-12 mb-10" onSubmit={getExperiences}>
         <input
-          className="rounded-r-none col-span-10 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="rounded-r-none col-span-9 md:col-span-10 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           name="search"
           type="text"
           required
@@ -50,7 +50,7 @@ export default function SearchBar(){
           onChange={e => setSearch(e.target.value)}
         />
         <span
-        className="rounded-l-none col-span-2 h-full text-center cursor-pointer px-4 py-2 rounded text-white shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700"
+        className="rounded-l-none col-span-3 md:col-span-2 h-full text-center cursor-pointer px-4 py-2 rounded text-white shadow-lg bg-purple-700 hover:bg-purple-900 focus:bg-purple-700"
         onClick={getExperiences}>
         Buscar
         </span>
